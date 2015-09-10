@@ -1,0 +1,69 @@
+\documentclass{sig-alternate}
+\usepackage{color}
+
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+
+\title{Adaptation Writ Large:\\ An essay in memory of John H. Holland}
+
+%\title{A Common Framework for Defense across Complex Systems}
+
+%\title{Complex Defense: Towards a Theory of Security across Complex Systems}
+
+% Listed authors alphabetically for now.
+
+\numberofauthors{2}
+\author 
+{\alignauthor
+ Stephanie Forrest\\
+ \affaddr{University of New Mexico}\\
+ \affaddr{Santa Fe Institute}\\
+ \email{forrest@cs.unm.edu}
+ \alignauthor
+Melanie Mitchell \\
+ \affaddr{Portland State University}\\
+ \affaddr{Santa Fe Institute}\\
+ \email{mm@cs.pdx.edu}
+}
+
+\begin{document}
+\maketitle
+
+% \begin{abstract}
+% \input{abstract}
+% \end{abstract}
+
+\section{Introduction}
+
+Prof. John H. Holland passed away recently in Ann Arbor, MI, where he had been on the Univ. of Michigan faculty for XXXX years.  John, as he was known universally to his colleagues and students, 
+leaves behind a long legacy of intellectual achievements that is in some ways difficult to pin down.   He is best known for the mechanisms he proposed, especially genetic algorithms, but the motivations behind the mechanisms are less well known but probably more important in the long run.  These mechanisms did not always implement his theoretical framworks perfectly, and in many cases too much effort was spent trying to rescue the mechanisms and not enough in understanding the underlying rationale.  In this short essay, we aim to remind people of some of the key themes of his work, discuss the role they have played in computer science, and highlight especially the ideas that we think remain relevant to today's research agendas.  Many of the problems that John identified and spent his life studying, such as [FILL IN HERE], are still poorly understood.
+
+At a time, when computer science was crytstallizing into an engineering discipline, John came out of the cybernetics era (dating back to von Neumann, Wiener, Ashby, Turing) with a view of computation as a broad interdisciplinary enterprise: "Computation as an idea is something that goes much deeper than operating systems, programming languages, and the like.  The deep ideas of computation are intimately related to the deep ideas of life and intelligence" [Holland quote: Mitchell book, p. 128].  Thus, he became an early proponent of interdisciplinary approaches to computer science and was an active evangelist of what is now called computational thinking, reaching out psychologists, economists, physicists, linguists, philosophers and pretty much anyone he came in contact with.  As a result, even though he received what was arguably the first Ph.D. in our discipline (1958, XXXX), his contributions are much better known outside of computer science than within.
+
+Here we emphasize four recurrent themes of his work: Leveraging statistics in adaptation, learning and credit assignment, models, and the generic properties of complex adaptive systems.
+
+\section{Leveraging statistics in adaptation}
+
+\section{ Learning and Credit assignment}
+
+\section{Modeling}
+
+Modeling is central to Holland's theory of adaptive systems.  He posits that all adaptive systems create and use internal models to survive in their environments, through anticipation.  Models can be tacit and learned through evolutionary time, as in the case of bacteria swimming up a chemical gradient, or explicit and learned over a single lifespan as in the case of cognitive systems that incorporate experience into internal rule sets through learning.  In \underline{Induction}, Holland and his co-authors discuss how such internal models can be learned, without supervision, by combining environmental inputs with stored knowledge.  A key idea is that a model defines an equivalence relation over a set of environmental states, together with a set of transition rules, which are learned over time based on environmental inputs.  Models that form valid homomorphisms with the environment allow the system to make accurate predictions.  In his conception, the equivalence classes are initially very general, say 'moving object' and 'stationary object,' and over time through experience and learning they are specialized into more useful and precise subclasses, say 'insect' and 'nest', which form a default hierarchy and are associated with more specific transition rules.  Although the idea of default hierarchies is prevalent in many knowledge representation systems (LIST A FEW?), Holland made two key contributions, first by emphsizing homomorphisms as a formal way to evaluate model validity, and idea that dates back to Ross Ashby's \underline{An Introduction to Cybernetics} that Holland's student, Bernard Ziegler, developed into a formal theory of computer modeling and simulation.  Today, even though computational modeling is a major application area of computing,  essential to most natural sciences and engineering disciplines, these early homorphic theories of modeling stand as the most elegant approach we know of for characterizing when a model is consistent with the environment and how an intelligent agent, human or artificial, can update the model to better reflect reality.
+Holland's second key contribution was describing a computational mechanism by which a cognitive system could iteratively build up a detailed and hierarchical model of its environment, as Melanie already discussed above.
+
+Given that Holland believed that the ability to learn and manipulate internal models was essential for any adapting system, it is no suprise that he viewed modeling as essential for scientific inquiry.  
+Today, we use computational models in several distinct ways---as a tool for analyzing data in statistical models, through simulation as a method for discovering new knowledge, and as a way to explain or understand how a system works.  This third use of models was dear to Holland's heart.  In his view, the key to science was understanding the mechanisms that cause a system to behave in a certain way, an aspiration that goes well beyond data fitting methods, which typically focus only on describing the aggregate behavior of a system.  For example, a statistical model that describes the boom and bust pattern of the stock market cannot address the underlying mechanisms that lead to these cycles, through the collective actions of many many individual buy/sell decisions.  Similarly, the genetic algorithms for which he is so famous provide a simple computational framework in which to explore the dynamics of Darwinian evolution and whether the basic mechanisms of variation, differential reproduction, and heredity are sufficient to account for the richness of our natural world.  This emphasis on exploratory models to build intuitions was an important theme of Holland's work, and he often quoted Eddington's remark on the occasion of the first experimental test of Einstein's theory of relativity: "The contemplation in natural science of a wider domain than the actual leads to a far better understanding of the actual."  Holland was interested in models that explored basic principles and mechanisms, even if they didn't make specific predcitions, models that could show generically how certain behaviors could be produced, for example how exponential growth might interact with finite resources.  Holland pioneered a style of modeling that has come to be known as 'individual based' or 'agent based,' in which every component of a system is represented explicitly and has state, e.g., every trader in a stock market system or every cell in an immune system model, and each agent had its own behaviors, which it could update (learn) over time.  These models are often defined over spatial structures, such as networks or simple grids, to capture the constraints of systems living under spatial constraints.  An agent-based model, then, encodes a theory about the mechanisms that are relevant for producting the behavior of interest.  Similar to expert systems, such models are especially useful for studying systems that don't have analytic mathematical descriptions and they can facilitate interdisicplinary collaborations because the underlying rules can be easily communicated.  It should be noted that Holland's view of modeling is by no means typical.  For example, in a textbook on computational modeling, the authors offer the following definition:  “Modeling is the application of methods to analyze complex, real-world problems in order to make predictions about what might happen with various actions.” [Shiflet and Shiflet, 2006].  This sort of perspective completely rules out the kind of modeling that Holland was most interested in, namely exploratory modeling.  Similarly, many dispute that models make any kind of scientific contribution:  “Models are metaphors that explain the world we don’t understand in terms of worlds we do.  They are merely analogies, provide partial insight, stand on someone else’s feet.  Theories stand on their own feet, and rely on no analogies.”  [Emanuel Derman, 2012].  [NOW WE NEED A STRONG FINISHING SENTENCE TO RESCUE JHH STYLE MODELING.]
+
+
+
+\section{Complexity}
+
+\section{Conclusion}
+
+Introduced a few generations of students to computation in natural systems, an idea that today is better accepted.  His insights were deeper and more general than what often passes for work in biomimicry, e.g., for robots.
+
+The ideas have had huge impact and should still be a beacon for research in intelligent and complex systems
+
+John's personality and humanity is inextricably tangled up with his intellectual contributions.
+
+
+\end{document}
