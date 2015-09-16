@@ -3,7 +3,13 @@
 
 \newcommand{\red}[1]{\textcolor{red}{#1}}
 
-\title{Adaptation Writ Large:\\ An Essay in Memory of John H. Holland}
+\title{Adaptation Writ Large:\\ An essay in memory of John H. Holland}
+
+%\title{A Common Framework for Defense across Complex Systems}
+
+%\title{Complex Defense: Towards a Theory of Security across Complex Systems}
+
+% Listed authors alphabetically for now.
 
 \numberofauthors{2}
 \author 
@@ -28,91 +34,16 @@ Melanie Mitchell \\
 
 \section{Introduction}
 
-Professor John H. Holland passed away recently in Ann Arbor, MI, where
-he had been on the University of Michigan faculty for over 50 years.
-John, as he was known universally to his colleagues and students,
-leaves behind a long legacy of intellectual achievements that is in
-some ways difficult to pin down.  He is best known for the mechanisms
-he proposed, especially genetic algorithms, but the motivations behind
-the mechanisms are less well known but probably more important in the
-long run.  These mechanisms did not always implement his theoretical
-framworks perfectly, and in many cases too much effort was spent
-trying to rescue the mechanisms and not enough in understanding the
-underlying rationale.  In this short essay, we aim to remind people of
-some of the key themes of his work, discuss the role they have played
-in computer science, and highlight especially the ideas that we think
-remain relevant to today's research agendas.  Many of the problems
-that John identified and spent his life studying, such as [FILL IN
-  HERE], are still poorly understood.
+Prof. John H. Holland passed away recently in Ann Arbor, MI, where he had been on the Univ. of Michigan faculty for XXXX years.  John, as he was known universally to his colleagues and students, 
+leaves behind a long legacy of intellectual achievements that is in some ways difficult to pin down.   He is best known for the mechanisms he proposed, especially genetic algorithms, but the motivations behind the mechanisms are less well known but probably more important in the long run.  These mechanisms did not always implement his theoretical framworks perfectly, and in many cases too much effort was spent trying to rescue the mechanisms and not enough in understanding the underlying rationale.  In this short essay, we aim to remind people of some of the key themes of his work, discuss the role they have played in computer science, and highlight especially the ideas that we think remain relevant to today's research agendas.  Many of the problems that John identified and spent his life studying, such as [FILL IN HERE], are still poorly understood.
 
-At a time, when computer science was crytstallizing into an
-engineering discipline, John came out of the cybernetics era (dating
-back to von Neumann, Wiener, Ashby, Turing) with a view of computation
-as a broad interdisciplinary enterprise.  Thus, he became an early
-proponent of interdisciplinary approaches to computer science and was
-an active evangelist of what is now called computational thinking,
-reaching out psychologists, economists, physicists, linguists,
-philosophers and pretty much anyone he came in contact with.  As a
-result, even though he received what was arguably the first Ph.D. in
-our discipline, his contributions are much better known outside of
-computer science than within.
+At a time, when computer science was crytstallizing into an engineering discipline, John came out of the cybernetics era (dating back to von Neumann, Wiener, Ashby, Turing) with a view of computation as a broad interdisciplinary enterprise: "Computation as an idea is something that goes much deeper than operating systems, programming languages, and the like.  The deep ideas of computation are intimately related to the deep ideas of life and intelligence" [Holland quote: Mitchell book, p. 128].  Thus, he became an early proponent of interdisciplinary approaches to computer science and was an active evangelist of what is now called computational thinking, reaching out psychologists, economists, physicists, linguists, philosophers and pretty much anyone he came in contact with.  As a result, even though he received what was arguably the first Ph.D. in our discipline (1958, XXXX), his contributions are much better known outside of computer science than within.
 
-Here we emphasize four recurrent themes of his work: adaptation as
-exploitation and exploration, learning and credit assignment, models,
-and the generic properties of complex adaptive systems.
+Here we emphasize four recurrent themes of his work: Leveraging statistics in adaptation, learning and credit assignment, models, and the generic properties of complex adaptive systems.
 
-\section{Adaptation as Exploitation and Exploration}
+\section{Leveraging statistics in adaptation}
 
-While John Holland is best known for inventing genetic algorithms, his
-lifelong motivation was much broader: to understand the
-phenomenon of adaptation in all its guises.  Holland's interest in
-developing a general theory of adaptation was spurred both by his
-early work on computer models of Hebbian learning
-\cite{RochesterHolland}.  This interest developed further with
-Holland's extensive reading in evolutionary biology, economics, game
-theory, and control theory.  Holland recognized that all these fields
-in essence concern agents that must use information as it is gained from
-uncertain, changing environments in order to continually improve their
-performance.  Moreover, Holland recognized that in systems with
-``adaptive'' agents of this kind, there is never a state of {\emph
-  equilibrium} or a final {\emph optimum} configuration; rather, due
-to the environment's ``perpetual novelty'' (as Holland termed it),
-adaptation continues forever in an open-ended way.
-
-Underlying Holland's theory of adaptation are three key ideas: (1) In
-a population undergoing adaptation, individuals can be decomposed into
-{\emph building blocks}---traits that are the ``atoms'' of an
-individual's fitness or performance.  (2) Successful adaptation
-requires the right tradeoff between {\emph exploitation}, in which
-tried-and-true building blocks propagate in a population, and {\emph
-  exploration}, in which new building blocks (or new combinations of
-old building blocks) arise and are subject to the test of the
-environment. (3) Adaptive evolution (biological and otherwise) is a
-population-based stochastic process that results in a nearly optimal
-exploitation versus exploration tradeoff.
-
-Holland's early papers (e.g.,
-\cite{OutlineLogicalTheory,OptimalAllocation}) and his influential
-1975 book {\emph Adaptation in Natural and Artificial Systems}
-\cite{ANAS} developed a general, formal setting in which these ideas
-could be expressed mathematically.  Moreover, Holland stated and
-proved a theorem that captured the third idea: that, given certain
-assumptions, his model of adaptation---while explicitly modifying
-populations of individuals, implicitly searched the space of possible
-building blocks in a way that optimized the exploitation and
-exploration balance.  (As an earlier part of this work, Holland
-separately derived an equation for that optimal balance, via a
-so-called ``multi-armed bandit'' model.)
-
-It was this formal setting and resulting theorem that led to the
-invention of genetic algorithm.  However, it is important to note that
-the framework developed in \cite{ANAS} was more general than the
-genetic algorithm and was created in order to develop an
-interdisciplinary theory of adaptation.  The later, successful
-application of genetic algorithms to real-world optimization and
-learning tasks was, for Holland, just icing on the cake.
-
-\section{Learning Via Credit Assignment and Rule Discovery}
+\section{ Learning and Credit assignment}
 
 \section{Modeling}
 
