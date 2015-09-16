@@ -63,7 +63,7 @@ and the generic properties of complex adaptive systems.
 
 \section{Adaptation as Exploitation and Exploration}
 
-While John Holland is best known for inventing genetic algorithms, his
+Although John Holland is best known for inventing genetic algorithms, his
 lifelong motivation was much broader: to understand the
 phenomenon of adaptation in all its guises.  Holland's interest in
 developing a general theory of adaptation was spurred both by his
@@ -85,32 +85,36 @@ a population undergoing adaptation, individuals can be decomposed into
 individual's fitness or performance.  (2) Successful adaptation
 requires the right tradeoff between {\emph exploitation}, in which
 tried-and-true building blocks propagate in a population, and {\emph
-  exploration}, in which new building blocks (or new combinations of
-old building blocks) arise and are subject to the test of the
+  exploration}, in which new building blocks (or recombinations of
+existing building blocks) arise and are subject to the test of the
 environment. (3) Adaptive evolution (biological and otherwise) is a
 population-based stochastic process that results in a nearly optimal
-exploitation versus exploration tradeoff.
+exploitation versus exploration tradeoff.   
 
 Holland's early papers (e.g.,
 \cite{OutlineLogicalTheory,OptimalAllocation}) and his influential
 1975 book {\emph Adaptation in Natural and Artificial Systems}
 \cite{ANAS} developed a general, formal setting in which these ideas
 could be expressed mathematically.  Moreover, Holland stated and
-proved a theorem that captured the third idea: that, given certain
-assumptions, his model of adaptation---while explicitly modifying
+proved a set of theorems that captured the third idea: that, given certain
+assumptions, his model of adaptation, while explicitly modifying
 populations of individuals, implicitly searched the space of possible
 building blocks in a way that optimized the exploitation and
 exploration balance.  (As an earlier part of this work, Holland
 separately derived an equation for that optimal balance, via a
-so-called ``multi-armed bandit'' model.)
+so-called ``multi-armed bandit'' model.)    
 
-It was this formal setting and resulting theorem that led to the
-invention of genetic algorithm.  However, it is important to note that
+It was this formal setting and resulting theorems that led to the
+invention of genetic algorithms, which featured stochastic population-based
+search and recombination (or {\emph crossover}) as the most important
+operation.  However, it is important to note that
 the framework developed in \cite{ANAS} was more general than the
 genetic algorithm and was created in order to develop an
-interdisciplinary theory of adaptation.  The later, successful
-application of genetic algorithms to real-world optimization and
-learning tasks was, for Holland, just icing on the cake.
+interdisciplinary theory of adaptation, one that would inform biology,
+say, as much as computer science \cite{ChristiansenFeldmanPaper}.  The
+later, successful application of genetic algorithms to real-world
+optimization and learning tasks was, for Holland, just icing on the
+cake.
 
 \section{Learning Via Credit Assignment and Rule Discovery}
 
