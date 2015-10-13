@@ -212,6 +212,107 @@ learning tasks was, for Holland, just icing on the cake.
 
 \section{Learning Via Credit Assignment and Rule Discovery}
 
+While genetic algorithms are nowadays often associated with models of
+biological evolution, in Holland's view the processes of adaptation he
+was studying manifested themselves in many different complex systems.
+One system of special interest to Holland was the human mind, and in
+particular, its capacity to learn via induction.
+
+In the 1970s and 80s Holland formulated and extensively explored a
+particular model of decision-making, action, and inductive learning,
+called the {\emph classifier system}
+(e.g., \cite{Holland&Reitman1978,EscapingBrittlenessPaper}.  In a
+classifier system, a population of ``if-then'' rules interacts with an
+environment, and over time is able to learn to improve its performance
+via both {\emph credit-assignment} and {\emph rule-discovery}
+algorithms.
+
+Like the genetic algorithm, classifier systems can be viewed both as a
+model of adaptation and as an artificial-intelligence (AI) method.  At
+the time Holland was developing classifier systems, the field of AI
+was focused on expert systems, which typically did not learn on their
+own, a fundamental deficiency in Holland's view: ``[Expert] systems
+are brittle in the sense that they respond appropriately only in
+narrow domains, requiring substantial human intervention to compensate
+for even slight shifts in domain'' \cite{EscapingBrittleness}. In
+contrast, Holland proposed that ``{\emph induction} is the basic, and
+perhaps only, way of making large advances in this direction.''
+
+Holland's inspiration for classifier systems came from several
+different disciplines.  Knowledge representation in the form of a
+population of ``if-then'' rules seemed like a good choice, not only
+because of its popularity in AI at the time but also from Holland's
+early work on modeling Hebbian cell assemblies: ``In Hebbs view, a
+cell assembly makes a simple statement: If such and such an event
+occurs, then I will fire for a while at a high
+rate.'' \cite{Quoted-in-Waldrop-Book-P.182}.  
+
+The if-then rules, when activated, compete to post their results on a
+shared ``message list'', modeling the system's short-term memory
+(again inspired by Hebb's work).  The competition was based on an
+bidding process, in which a rule's current strength affected its
+ability to bid highly.  Successful rules were gradually strengthened
+(and unsuccessful rules weakened) via a credit-assignment method
+called the {\emph bucket-brigade} algorithm, in which rules gaining
+rewards from the environment or from other rules would pay back part
+of their gains to those earlier-firing ``stage-setting'' rules that
+set up the conditions for the eventual reward.  The idea for the
+bucket-brigade algorithm was inspired by the mechanisms of Hebbian
+learning and by early work on learning and optimization in economics,
+psychology, control theory, and other fields (e.g.,
+\cite{Bellman1957,Samuel1959}). \footnote{Of course similar
+  credit-assignment methods have been used extensively in
+  reinforcement learning, neural networks, and other areas of modern
+  machine learning, but Holland was among the first to propose such
+  methods.}
+
+Finally, new rules for the population are discovered by a genetic
+algorithm, using the strength of rules as a fitness function.
+
+Classifier systems are fairly complex architectures, with learning
+occurring at multiple time scales.  Nevertheless, such systems have
+been usefully applied to areas as diverse as
+poker-playing \cite{Smith1980}, control of gas pipeline
+transmission \cite{Goldberg1983}, and modeling the stock
+market \cite{PalmerEtAl}.  Modern reinforcement learning methods have
+largely taken over as more useful approaches to real-world decision
+and control problems, but classifier systems can perhaps be thought of
+as an essential ``stage-setting'' method that enabled the development
+of later approaches.
+
+John Holland's main interest in classifier systems was how the two
+learning mechanisms could work together to create subsets of rules
+that accurately model the environment, and thus are able to ``fire''
+at appropriate times.  An important part of such internal models is
+the notion of a {\emph default hierarchy}---a set of rules that
+together form a kind of hierarchical decision structure, going from
+most general to most specific.  For example, a general rule might
+state that, ``If X is a bird, then X can fly'', whereas a more specifc
+one might state, ``If X is a bird with small wings and a large body,
+then X cannot fly'' \cite{InductionBook}.  When faced with a bird in
+the environment, both rules might compete to post their conclusion,
+but the more specific one would be favored if both of its conditions are met.
+
+Holland envisioned that, with a complex environment and enough time
+for learning, a classifier system might learn an intricate default
+hierarchy of rules, and that the competition inherent in the learning
+and action mechanisms would allow the system to adapt to a continually
+changing environment without losing what it has learned in the past.
+Holland put it this way: ``Competition among rules provides the system
+with a graceful way of handling perpetual novelty.  When a system has
+strong rules that respond to a particular situation, that is the
+equivalent of saying that it has certain well-validated hypotheses.
+Offspring rules, which begin life weaker than do their parents, can
+win the competition and influence the system's behavior only when
+there are not strong rules whose conditions are satisfied---in other
+words when the system does not know what to do.  If their actions
+help, they survive; if not they are soon replaced.  Thus, the
+offspring do not interfere with the system's action in well-practiced
+situations but wait gracefully in the wings as hypotheses about what
+to do under novel circumstances." \cite{HollandSciAmArticle}.
+
+[MM: Default hierarchy emerged in Goldberg's application?  See Holland's discussion.]
+
 \section{Internal Models}
 
 The concept of {\emph internal models} is central to Holland's theory
@@ -311,6 +412,17 @@ rely on no analogies.”  [Emanuel Derman, 2012].  [NOW WE NEED A STRONG
 \section{Complexity}
 
 \section{Relevance to Modern CS}
+
+begin{itemize}
+\item Evolutionary computation
+\item Q Learning
+\item Backprop
+\item    From Turing nomination: "Holland's machine learning system known as the
+   Learning Classifier System (LCS), developed in the early 1980s,
+   incorporated a reinforcement learning algorithm known as the bucket
+   brigade for non-Markovian environments, anticipating by nearly a
+   decade non-Markovian learning algorithms."
+\end{itemize}
 
 \begin{itemize}
 \item Exploitation versus exploration -- relevance to reinforcement
