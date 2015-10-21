@@ -56,36 +56,37 @@ offshoot of Holland's much broader motivation---to develop a general
 theory of adaptation in complex systems.  This motivation was the
 driving force in all of Holland's research.   
 
-In this short essay, we sketch four key, recurrent themes of Holland's
+In this short essay, we sketch five key, recurrent themes of Holland's
 work on adaptive systems: (1) the evolutionary dynamics of ``building
 blocks''; (2) learning via credit assignment and rule discovery; (3)
-the emergence of internal models; and (4) the generic properties of
-complex adaptive systems.  We discuss the role these themes have
-played in computer science, and highlight especially the ideas that we
-think remain relevant to today's research agendas.
+the emergence of internal models; (4) the art of scientific modeling;
+and (5) the universal properties of complex adaptive systems.  We
+discuss the role these themes have played in computer science, and
+highlight especially the ideas that we think remain relevant to
+today's research agendas.
 
 \section{Evolutionary Dynamics of ``Building Blocks''}  
 
 Holland's goal of developing a general theory of adaptation was
 spurred both by his early work on computer models of Hebbian learning
-\cite{RochesterHolland} and his reading of Ronald Fisher's classic
-work on integrating genetics with Darwinian selection \cite{Genetical
-  Theory of Natural Selection}.  As Holland further read extensively
-in evolutionary biology, economics, game theory, and control theory,
-he came to recognize that adaptation was the most central concept in
-all these fields.  That is, these fields all concern populations of
-agents that must continually obtain information from uncertain
-changing environments and use it in order to improve their performance
-with respect to those environments.  Moreover, Holland recognized that
-in systems with {\em adaptive agents} of this kind, there is never a
-state of {\emph equilibrium} or a final {\emph optimum} configuration.
-Due to the environment's ``perpetual novelty'' (as Holland termed it),
-adaptation continues forever in an open-ended way.  Holland's focus on
-open-ended, non-equilibrium dynamics was in stark contrast with the
-mainstream approach (at the time) in all these fields---the belief
-that ``solving for'' stable equilibrium dynamics was the scientific
-goal.  Holland's contrary view was that a system in stable equilibrium
-is essentially {\emph dead}.
+\cite{Rochester1956} and his reading of Ronald Fisher's classic work
+on integrating genetics with Darwinian selection \cite{Fisher1930}.
+As Holland further read extensively in evolutionary biology,
+economics, game theory, and control theory, he came to recognize that
+adaptation was the most central concept in all these fields.  That is,
+these fields all concern populations of agents that must continually
+obtain information from uncertain changing environments and use it in
+order to improve their performance with respect to those environments.
+Moreover, Holland recognized that in systems with {\em adaptive
+  agents} of this kind, there is never a state of {\emph equilibrium}
+or a final {\emph optimum} configuration.  Due to the environment's
+``perpetual novelty'' (as Holland termed it), adaptation continues
+forever in an open-ended way.  Holland's focus on open-ended,
+non-equilibrium dynamics was in stark contrast with the mainstream
+approach (at the time) in all these fields---the belief that ``solving
+for'' stable equilibrium dynamics was the scientific goal.  Holland's
+contrary view was that a system in stable equilibrium is essentially
+{\emph dead}.
 
 Underlying Holland's theory of adaptation are three core ideas: 
 
@@ -114,16 +115,15 @@ Underlying Holland's theory of adaptation are three core ideas:
   means that the system won't leverage the successful building blocks
   that have already been discovered.  There is some optimal balance
   between these two modes of processing.
-
 \end{itemize}
 
 Several of Holland's early papers (e.g.,
-\cite{OutlineLogicalTheory,OptimalAllocation}) and his influential
+\cite{Holland1962,Holland1973}) and his influential
 1975 book {\emph Adaptation in Natural and Artificial Systems}
-\cite{ANAS} developed a general, formal setting in which these ideas
+\cite{Holland1975} developed a general, formal setting in which these ideas
 could be expressed mathematically.
 
-In particular, inspired by Bellman \cite{AdaptiveControlProcesses} and
+In particular, inspired by Bellman \cite{Bellman1961} and
 others, Holland explored the exploitation-versus-exploration tradeoff
 via an idealized ``two-armed bandit'' problem.  Given a slot machine
 with two arms, each of which has an unknown payoff probability, how
@@ -136,7 +136,7 @@ that arm alone.  Conversely, an example of an extreme {\emph
 irrespective of the payoff rates you obtain.  Obviously, each of these
 strategies is flawed.  What is an optimal strategy?
 
-In \cite{OptimalAllocationOfTrials} and \cite{ANAS}, Holland derived
+In \cite{Holland1973} and \cite{Holland1975}, Holland derived
 an equation for such a strategy.  Let $A$ denote the arm currently
 observed to have the higher payoff probability, and $B$ denote the
 other arm.  Holland showed that the optimal strategy (the one that
@@ -203,16 +203,16 @@ non-stationary environments rather than optimization to static
 environments.
 
 It is important to point out again that the framework Holland
-developed in \cite{ANAS} was more general than the genetic algorithm;
+developed in \cite{Holland1975} was more general than the genetic algorithm;
 it was created in order to develop an interdisciplinary theory of
 adaptation, one that would inform biology, say, as much as computer
-science \cite{ChristiansenFeldmanPaper}.  The later, successful
+science \cite{Christiansen1998}.  The later, successful
 application of genetic algorithms to real-world optimization and
 learning tasks was, for Holland, just icing on the cake.
 
 \section{Learning Via Credit Assignment and Rule Discovery}
 
-While genetic algorithms are nowadays often associated with models of
+While genetic algorithms are nowadays most often associated with models of
 biological evolution, in Holland's view the processes of adaptation he
 was studying manifested themselves in many different complex systems.
 One system of special interest to Holland was the human mind, and in
@@ -220,21 +220,20 @@ particular, its capacity to learn via induction.
 
 In the 1970s and 80s Holland formulated and extensively explored a
 particular model of decision-making, action, and inductive learning,
-called the {\emph classifier system}
-(e.g., \cite{Holland&Reitman1978,EscapingBrittlenessPaper}.  In a
-classifier system, a population of ``if-then'' rules interacts with an
-environment, and over time is able to learn to improve its performance
-via both {\emph credit-assignment} and {\emph rule-discovery}
-algorithms.
+called the {\emph classifier system} (e.g.,
+\cite{Holland1977,Holland1986}.  In a classifier system, a population
+of ``if-then'' rules interacts with an environment, and over time is
+able to learn to improve its performance via both {\emph
+  credit-assignment} and {\emph rule-discovery} algorithms.
 
-Like the genetic algorithm, classifier systems can be viewed both as a
-model of adaptation and as an artificial-intelligence (AI) method.  At
+Like genetic algorithms, classifier systems can be viewed both as 
+models of adaptation and as artificial-intelligence (AI) methods.  At
 the time Holland was developing classifier systems, the field of AI
 was focused on expert systems, which typically did not learn on their
 own, a fundamental deficiency in Holland's view: ``[Expert] systems
 are brittle in the sense that they respond appropriately only in
 narrow domains, requiring substantial human intervention to compensate
-for even slight shifts in domain'' \cite{EscapingBrittleness}. In
+for even slight shifts in domain'' \cite{Holland1986}. In
 contrast, Holland proposed that ``{\emph induction} is the basic, and
 perhaps only, way of making large advances in this direction.''
 
@@ -245,7 +244,7 @@ because of its popularity in AI at the time but also from Holland's
 early work on modeling Hebbian cell assemblies: ``In Hebbs view, a
 cell assembly makes a simple statement: If such and such an event
 occurs, then I will fire for a while at a high
-rate.'' \cite{Quoted-in-Waldrop-Book-P.182}.  
+rate.'' \cite{Waldrop1993} (p. 182).  
 
 The if-then rules, when activated, compete to post their results on a
 shared ``message list'', modeling the system's short-term memory
@@ -260,7 +259,7 @@ set up the conditions for the eventual reward.  The idea for the
 bucket-brigade algorithm was inspired by the mechanisms of Hebbian
 learning and by early work on learning and optimization in economics,
 psychology, control theory, and other fields (e.g.,
-\cite{Bellman1957,Samuel1959}). \footnote{Of course similar
+\cite{Bellman1961,Samuel1959}). \footnote{Of course similar
   credit-assignment methods have been used extensively in
   reinforcement learning, neural networks, and other areas of modern
   machine learning, but Holland was among the first to propose such
@@ -274,7 +273,7 @@ occurring at multiple time scales.  Nevertheless, such systems have
 been usefully applied to areas as diverse as
 poker-playing \cite{Smith1980}, control of gas pipeline
 transmission \cite{Goldberg1983}, and modeling the stock
-market \cite{PalmerEtAl}.  Modern reinforcement learning methods have
+market \cite{Palmer1994}.  Modern reinforcement learning methods have
 largely taken over as more useful approaches to real-world decision
 and control problems, but classifier systems can perhaps be thought of
 as an essential ``stage-setting'' method that enabled the development
@@ -287,9 +286,9 @@ at appropriate times.  An important part of such internal models is
 the notion of a {\emph default hierarchy}---a set of rules that
 together form a kind of hierarchical decision structure, going from
 most general to most specific.  For example, a general rule might
-state that, ``If X is a bird, then X can fly'', whereas a more specifc
+state that, ``If X is a bird, then X can fly'', whereas a more specific
 one might state, ``If X is a bird with small wings and a large body,
-then X cannot fly'' \cite{InductionBook}.  When faced with a bird in
+then X cannot fly'' \cite{Holland1989}.  When faced with a bird in
 the environment, both rules might compete to post their conclusion,
 but the more specific one would be favored if both of its conditions are met.
 
@@ -309,111 +308,147 @@ words when the system does not know what to do.  If their actions
 help, they survive; if not they are soon replaced.  Thus, the
 offspring do not interfere with the system's action in well-practiced
 situations but wait gracefully in the wings as hypotheses about what
-to do under novel circumstances." \cite{HollandSciAmArticle}.
+to do under novel circumstances." \cite{Holland1992}.  A detailed
+discussion of some real-world applications of classifier systems is
+given in \cite{Booker1989}.
 
-[MM: Default hierarchy emerged in Goldberg's application?  See Holland's discussion.]
-
-\section{Internal Models}
+\section{Internal Models and Default Hierarchies}
 
 The concept of {\emph internal models} is central to Holland's theory
 of adaptive systems.  He posits that all adaptive systems create and
-use internal models to survive in their environments, through
+use internal models to prosper in their environments, through
 anticipation.  Models can be tacit and learned through evolutionary
 time, as in the case of bacteria swimming up a chemical gradient, or
-explicit and learned over a single lifespan as in the case of
+explicit and learned over a single lifespan, as in the case of
 cognitive systems that incorporate experience into internal rule sets
-through learning.  In \underline{Induction}, Holland and his
-co-authors discuss how such internal models can be learned, without
-supervision, by combining environmental inputs with stored knowledge.
-A key idea is that a model defines an equivalence relation over a set
-of environmental states, together with a set of transition rules,
-which are learned over time based on environmental inputs.  Models
-that form valid homomorphisms with the environment allow the system to
-make accurate predictions.  In his conception, the equivalence classes
-are initially very general, say 'moving object' and 'stationary
-object,' and over time through experience and learning they are
-specialized into more useful and precise subclasses, say 'insect' and
-'nest', which form a default hierarchy and are associated with more
-specific transition rules.  Although the idea of default hierarchies
-is prevalent in many knowledge representation systems (LIST A FEW?),
-Holland made two key contributions, first by emphsizing homomorphisms
-as a formal way to evaluate model validity, and idea that dates back
-to Ross Ashby's \underline{An Introduction to Cybernetics} that
-Holland's student, Bernard Ziegler, developed into a formal theory of
-computer modeling and simulation.  Today, even though computational
-modeling is a major application area of computing, essential to most
-natural sciences and engineering disciplines, these early homorphic
-theories of modeling stand as the most elegant approach we know of for
-characterizing when a model is consistent with the environment and how
-an intelligent agent, human or artificial, can update the model to
-better reflect reality.
+through learning.  
+
+In \cite{Holland1989}, Holland and his co-authors discuss how such
+internal models can be learned, without supervision, by combining
+environmental inputs with stored knowledge.  A key idea is that a
+model defines sets of equivalence relations over environmental states,
+together with a set of transition rules, which are learned over time
+based on environmental ``rewards'' (or ``punishments'').  Models that
+form valid homomorphisms with the environment allow the system to make
+accurate predictions.  In Holland's conception, the equivalence
+classes are initially very general, say ``moving object'' and
+``stationary object,'' and over time, through experience and learning,
+they are specialized into more useful and precise subclasses, say
+``insect'' and ``nest''.  As described above, the adaptive system
+eventually learns a default hierarchy of rules involving both general
+and specific classes.  
+
+Although the idea of default hierarchies is prevalent in many
+knowledge representation systems (LIST A FEW?), Holland made two key
+contributions.  The first was his emphasis of homomorphisms as a formal way to
+evaluate model validity.  This idea that dates back to Ross Ashby's
+\emph{An Introduction to Cybernetics} \cite{Ashby1956}. Holland's student,
+Bernard Ziegler developed this idea into a formal theory of computer modeling
+and simulation \cite{Ziegler1976}.  
+%Today, even though computational modeling is a major
+%application area of computing, essential to most natural sciences and
+%engineering disciplines
+Even today, these early homomorphic theories of modeling
+stand as the most elegant approach we know of for characterizing when
+a model is consistent with the environment and how an intelligent
+agent, human or artificial, can update the model to better reflect
+reality.
 
 Holland's second key contribution was describing a computational
-mechanism by which a cognitive system could iteratively build up a
-detailed and hierarchical model of its environment, as Melanie already
-discussed above.
+mechanism---classifier systems---by which a cognitive system could
+iteratively build up a detailed and hierarchical model of its
+environment.  The key learning elements of this method, the
+bucket-brigade algorithm, combined with a genetic algorithm, as
+described above, presaged many of the ideas in modern reinforcement
+learning.
+
+\section{The Art of Scientific Modeling}
 
 Given that Holland believed that the ability to learn and manipulate
 internal models was essential for any adapting system, it is no
-suprise that he viewed modeling as essential for scientific inquiry.
-Today, we use computational models in several distinct ways---as a
-tool for analyzing data in statistical models, through simulation as a
-method for discovering new knowledge, and as a way to explain or
-understand how a system works.  This third use of models was dear to
-Holland's heart.  In his view, the key to science was understanding
-the mechanisms that cause a system to behave in a certain way, an
-aspiration that goes well beyond data fitting methods, which typically
-focus only on describing the aggregate behavior of a system.  For
-example, a statistical model that describes the boom and bust pattern
-of the stock market cannot address the underlying mechanisms that lead
-to these cycles, through the collective actions of many many
+surprise that he viewed modeling as essential for scientific inquiry.
+
+%Today, we use computational models in several distinct ways---as
+%tools for analyzing data in statistical models; as methods for
+%discovering new knowledge; and as a means to understand how complex
+%systems works.  [Steph, I am not clear on the distinction between the
+%second and third things here, so I combined them.  Change back if you
+%want.]
+
+Today, we use computational models both for \emph{prediction}---by
+analyzing data via statistical models---and for \emph{understanding}
+how systems work---by probing the effects of hypothesized underlying
+mechanisms.  This latter use of models was dear to Holland's heart.
+In his view, the key to science was understanding the mechanisms that
+cause a system to behave in a certain way, an aspiration that goes
+well beyond data fitting methods, which typically focus only on
+describing the aggregate behavior of a system.  
+
+For example, a statistical model that describes the boom and bust
+pattern of the stock market cannot address the underlying mechanisms
+that lead to these cycles, through the collective actions of myriad
 individual buy/sell decisions.  Similarly, the genetic algorithms for
-which he is so famous provide a simple computational framework in
+which Holland is so famous provide a simple computational framework in
 which to explore the dynamics of Darwinian evolution and whether the
 basic mechanisms of variation, differential reproduction, and heredity
-are sufficient to account for the richness of our natural world.  This
-emphasis on exploratory models to build intuitions was an important
-theme of Holland's work, and he often quoted Eddington's remark on the
-occasion of the first experimental test of Einstein's theory of
-relativity: "The contemplation in natural science of a wider domain
-than the actual leads to a far better understanding of the actual."
+are sufficient to account for the richness of our natural world.  
+
+The emphasis on exploratory models to build intuitions was an
+important theme of Holland's work, and he often quoted Eddington's
+remark on the occasion of the first experimental test of Einstein's
+theory of relativity: "The contemplation in natural science of a wider
+domain than the actual leads to a far better understanding of the
+actual" \cite{Eddington1927}.
+
 Holland was interested in models that explored basic principles and
-mechanisms, even if they didn't make specific predcitions, models that
-could show generically how certain behaviors could be produced, for
-example how exponential growth might interact with finite resources.
+mechanisms, even if they didn't make specific or detailed predictions.
+Such models can show generically how certain behaviors could be produced.
 Holland pioneered a style of modeling that has come to be known as
 'individual based' or 'agent based,' in which every component of a
 system is represented explicitly and has state, e.g., every trader in
-a stock market system or every cell in an immune system model, and
-each agent had its own behaviors, which it could update (learn) over
-time.  These models are often defined over spatial structures, such as
-networks or simple grids, to capture the constraints of systems living
-under spatial constraints.  An agent-based model, then, encodes a
-theory about the mechanisms that are relevant for producting the
-behavior of interest.  Similar to expert systems, such models are
-especially useful for studying systems that don't have analytic
-mathematical descriptions and they can facilitate interdisicplinary
-collaborations because the underlying rules can be easily
-communicated.  It should be noted that Holland's view of modeling is
-by no means typical.  For example, in a textbook on computational
-modeling, the authors offer the following definition: “Modeling is the
-application of methods to analyze complex, real-world problems in
-order to make predictions about what might happen with various
-actions.” [Shiflet and Shiflet, 2006].  This sort of perspective
-completely rules out the kind of modeling that Holland was most
-interested in, namely exploratory modeling.  Similarly, many dispute
-that models make any kind of scientific contribution: “Models are
-metaphors that explain the world we don’t understand in terms of
-worlds we do.  They are merely analogies, provide partial insight,
-stand on someone else’s feet.  Theories stand on their own feet, and
-rely on no analogies.”  [Emanuel Derman, 2012].  [NOW WE NEED A STRONG
-  FINISHING SENTENCE TO RESCUE JHH STYLE MODELING.]
+a stock market system or every cell in an immune system model.  In
+such models, each agent has its own behavior rules, which it can
+update (or learn) over time.  In order to capture the constraints of
+systems living under spatial constraints, these models are often
+defined over spatial structures, such as networks or simple grids.  
+
+A given agent-based model encodes a theory about the mechanisms that
+are relevant for producing the behavior of interest.  Similar to
+expert systems, such models are especially useful for studying systems
+that don't have analytic mathematical descriptions.  Agent-based
+models can facilitate interdisciplinary collaborations because the
+underlying rules can be easily communicated.  The agent-based models
+championed by Holland were typically idealized versions of complex
+systems and not intended to provide detailed, domain-specific
+predictions.  Instead they were meant to explore possible general
+mechanisms of complex systems and thus provide insights that might
+lead to more specific, detailed models.  Such idealized models are
+akin to what Dennett has called ``intuition pumps''
+\cite{Dennett1984}.
+
+It should be noted that Holland's view of modeling is by no means
+typical.  For example, in a textbook on computational modeling, the
+authors offer the following definition: “Modeling is the application
+of methods to analyze complex, real-world problems in order to make
+predictions about what might happen with various actions”
+\cite{Shiflet2014}.   This sort of perspective completely rules out the
+kind of exploratory modeling that Holland was most interested in. 
+
+Some researchers dispute that models make any kind of scientific
+contribution: "Models are metaphors that explain the world we don't
+understand in terms of worlds we do.  They are merely analogies,
+provide partial insight, stand on someone else's feet.  Theories stand
+on their own feet, and rely on no analogies."  [Emanuel Derman, 2012].
+[STEPH, I COULD NOT FIND REFERENCE FOR THIS QUOTE OUTSIDE SFI VIDEO.]
+
+[NOW WE NEED A STRONG FINISHING SENTENCE TO RESCUE JHH STYLE
+  MODELING.]
 
 \section{Complexity}
 
 \section{Relevance to Modern CS}
 
-begin{itemize}
+\begin{itemize}
 \item Evolutionary computation
 \item Q Learning
 \item Backprop
@@ -422,9 +457,6 @@ begin{itemize}
    incorporated a reinforcement learning algorithm known as the bucket
    brigade for non-Markovian environments, anticipating by nearly a
    decade non-Markovian learning algorithms."
-\end{itemize}
-
-\begin{itemize}
 \item Exploitation versus exploration -- relevance to reinforcement
   learning, other parts of machine learning and optimization.
 \item Active learning.  (Two-armed bandit problem.) 
@@ -439,5 +471,8 @@ The ideas have had huge impact and should still be a beacon for research in inte
 
 John's personality and humanity is inextricably tangled up with his intellectual contributions.
 
+\bibliographystyle{plain}
+
+\bibliography{paper}
 
 \end{document}
