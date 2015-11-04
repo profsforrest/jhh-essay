@@ -65,9 +65,8 @@ In this short essay, we consider this larger framework, sketching the
 recurring themes that were central to Holland's theory of
 adaptive systems: (1) discovery and 
 %evolutionary 
-dynamics of building blocks; (2) internal models and [prediction?] perpetual
-novelty; (3) the art [SF doesn't like the term ART] of scientific modeling; and (4) common
-properties of complex adaptive systems.  
+dynamics of building blocks; (2) internal models and prediction; (3) 
+exploratory modeling; and (4) complex adaptive systems.  
 %We discuss the role these
 %themes have played in computer science, and highlight especially the
 %ideas that we think remain relevant to today's research agendas.  [MM
@@ -165,8 +164,7 @@ Underlying Holland's theory of adaptation are the following core ideas:
   blocks into higher-order building blocks.  Holland proposed using an
   analog of Darwinian selection for the first and the idea of crossing
   over in genetics for the second.  Holland referred to the building
-  blocks as \emph{schemas.} 
-%which correspond mathematically to hyperplanes in the search space. MM: this makes sense only in bit-string example.  
+  blocks as \emph{schemas} and defined them as hyperplanes in the search space. 
 
 %In a population undergoing adaptation,
 %  individuals can be decomposed into \emph{building blocks}---sets of
@@ -415,7 +413,7 @@ novel circumstances.'' \cite{Holland1992}.
 %help, they survive; if not they are soon replaced.  
 %Thus,
 
-\section{The Art of Scientific Modeling}
+\section{Exploratory Modeling}
 
 Given that Holland believed that the ability to learn and manipulate
 internal models was essential for any adaptive system, it is no
@@ -471,11 +469,10 @@ are relevant for producing the behavior of interest.
 %that do not have analytic mathematical descriptions.  [MM took out to shorten this paragraph]
 %Agent-based models can facilitate interdisciplinary collaborations because the
 %underlying rules can be easily communicated.  
-[SF: THINKS this next text doesn't make sense until after complex
-systems seciton.]
-The agent-based models
-championed by Holland were typically idealized versions of complex
-systems and not intended to provide detailed, domain-specific
+%[SF: THINKS this next text doesn't make sense until after complex
+%systems seciton.]
+The exploratory models
+championed by Holland were idealized and not intended to provide detailed, domain-specific
 predictions.  Instead they were meant to explore possible general
 mechanisms of complex systems and thus provide insights that might
 lead to more specific, detailed models.  Such idealized models are
@@ -510,7 +507,7 @@ kind of exploratory modeling that Holland was most interested in.
 
 %\section{Common Properties of Complex Adaptive Systems}
 
-\section{Complexity}
+\section{Complex Adaptive Systems}
 
 %\section{Complex Adaptive Systems}
 
@@ -521,35 +518,46 @@ group of scientists, primarily physicists with a sprinkling of
 economists and biologists, to discuss what properties this wide swath of systems
 have in common.  The discussions helped define the intellectual mission
 of the Santa Fe Institute (SFI), the first institution dedicated to
-developing a science of complexity.  [add in how many complexity
-  institutes there are worldwide and which others John played a hand
-  in. MM says: Do we really need that?]  Holland brought to these discussions his lifelong study of
-adaptation and a reminder that true theories about complexity would
+developing a science of complexity, and the many others that followed.
+% [add in how many complexity
+%  institutes there are worldwide and which others John played a hand
+%  in. MM says: Do we really need that?]  
+Holland brought to these discussions his lifelong study of
+adaptation and a reminder that serious theories about complexity would
 need to look deeper than phenomenological descriptions but also
 account for the `how' and `why' of these systems.
 %describing phenomena like chaos, power laws, and ONE MORE, and acoount for the  
 
 As the discussions matured, a consensus developed about the basic
-elements of complexity: (1) complex systems are composed of many
-components with nonlinear interactions; (2) such systems
-are characterized by complex \emph{emergent} behavior, exhibiting
-higher-order patterns; (3) such systems operate at multiple (and often
+elements of complex systems, which are: (1) 
+%complex systems are 
+composed of many
+components with nonlinear interactions; (2) 
+%such systems
+%are 
+characterized by complex \emph{emergent} behavior, exhibiting
+higher-order patterns; (3) 
+%such systems 
+operating at multiple (and often
+% interacting? 
 nested) spatial and temporal scales, with some behavior being
 conserved across all scales and other behaviors changing at different
-scales, and (4) these systems exhibit continual adaptation, adjusting
-their behavioral rules through evolution and learning.  Although this
+scales, and (4) 
+%these systems exhibit 
+adaptative, with 
+behavioral rules continually adjusting through evolution and learning.  Although this
 is far from a formal definition of complex systems, most people
 working in the field today are interested in systems that have these
 properties.
 
-To illustrate his ideas about the ubiquity of adaptation, Holland and
-co-workers developed two exploratory models, the SFI Artificial Stock
-Market and ECHO.  
+%To illustrate his ideas about the ubiquity of adaptation, Holland and
+%co-workers developed two exploratory models, the SFI Artificial Stock
+%Market and ECHO.  
 
 In the early 1990s, Holland teamed up with other Santa Fe Institute researchers,
 including several economists, to tackle the mismatch between predictions
 of rational expectations theory (the then dominant theory in economics) 
-and empirically observed stock market behaviors 
+and empirically observed stock market behaviors. 
 %that deviated from the predicted equilibrium solutions.  
 In brief, most
 economic theory of the day assumed that all participants in an economy
@@ -558,10 +566,11 @@ individual gain.  In real life, however, actors in economies
 and markets are rarely wholly rational, and financial markets often deviate
 from rationality, for example with speculative bubbles and crashes.
 
-The SFI Artificial Stock Market project \cite{Arthur1997,Palmer1994} explored a model in which rational
-traders are replaced by \emph{adaptive} traders---those who learn to
-forecast stock prices over time.  The model allowed testing for the
-possible emergence of different trading strategies, including
+The SFI Artificial Stock Market project \cite{Arthur1997,Palmer1994}
+developed an exploratory model in which rational
+traders were replaced by \emph{adaptive} traders---those who learn to
+forecast stock prices over time.  The model tested for the
+emergence of different trading strategies, including
 \emph{fundamental}, \emph{technical}, or \emph{uninformed}
 strategies. The simulated market with adaptive trading agents was run
 many times, and the dynamics of price and trading volumes were
@@ -570,33 +579,40 @@ collaborators found that the model's dynamics replicated several
 features of real-life markets.
 
 Although the SFI Stock Market model was highly simplified, it was very
-influential and led to many follow-on projects.  It was a clear
-demonstration of the essential role that adaptation plays in complex
-systems, and illustrated how Holland's theories of continual learning
+influential and led to many follow-on projects.  It 
+demonstrated clearly the essential role that adaptation plays in complex
+systems, and it illustrated how Holland's theories of continual learning
 in response to intermittent feedbacks from the environment could be
 integrated into domain-specific settings.
 
 ECHO \cite{Holland1999,Hraber1997} was an even more ambitious model
-that Holland and collaborators developed during the 1990s.  ECHO's
-scope included the evolution of interacting populations of individual
-agents, which through competition and learning discover symbiotic
-triads such as the famous ant-fly-caterpillar interaction, the Wiksell
-triangle of trading relationships in economics, and the immune
-system's learned ability to distinguish `self' from `other.'
-
-ECHO formalized Holland's theories about complex adaptive systems into
+that Holland and collaborators developed during the 1990s. 
+% ECHO's
+% scope included the evolution of interacting populations of individual
+% agents, which through competition and learning discover symbiotic
+% triads such as the famous ant-fly-caterpillar interaction, the Wiksell
+% triangle of trading relationships in economics, and the immune
+% system's learned ability to distinguish `self' from `other.'
+ECHO formalized Holland's idealization of complex adaptive systems into
 a runnable computational system where agents evolved external markers
-(called tags) and internal preferences, and used them to form higher
-level aggregate structures (trading relationships, symbiotic groups,
+(called tags) and internal preferences, and then used them to acquire
+resources, form higher
+level aggregate structures (such trading relationships, symbiotic groups,
 trophic cascades, interdependent organizations, etc.).  ECHO agents
 sometimes discovered mimicry to deceive competitors, and over time,
-the model developed increasingly complex structures and behaviors,
-often reproducing patterns observed in nature.  For example, ECHO
-evolved a diversity of agent types whose rank-frequency distribution
-closely parallels the well-known Preston curve in ecology, a
-quantitative statement of the adage that ``most species are rare''. Many
-of the insights behind this project are described in Holland's book \emph{Hidden Order} \cite{Holland1995}. 
-The broad scope of this project was appealing to immunologists, economists, and evolutionary biologists alike.  
+the model developed increasingly complex structures and behaviors, at
+least up to a point.  ECHO reproduced several well-known patterns 
+observed in nature, for example, over time the population of ECHO
+evolved agents exhibited diversity of agent types, diversity with a 
+rank-frequency distribution that
+closely paralleled the well-known Preston curve in ecology.  In
+layman's terms, ECHO evolved populations where 
+%quantitative statement of the adage that
+``most species are rare.''  
+The broad scope of the model, together with its ability to produce
+easily identifiable patterns, was appealing to immunologists, economists, and evolutionary biologists alike.   Many
+of the insights behind this project are described in Holland's third book \emph{Hidden Order} \cite{Holland1995}. 
+
 
 % but it
 %was the economists who took it one step further in the SFI stock
@@ -626,31 +642,61 @@ willingness to tackle the hardest questions, develop his own
 formalisms, and use mathematics productively sets a high bar to whch we
 all should aspire.
 
-\section{Relevance to Modern CS}
-[MM says:  Do we need this section?  Or can we incorporate these points within the previous sections?]
+%\section{Relevance to Modern CS}
+%[MM says:  Do we need this section?  Or can we incorporate these points within the previous sections?]
 
-\begin{itemize}
-\item Evolutionary computation
-\item Q Learning
-\item Backprop
-\item    From Turing nomination: "Holland's machine learning system known as the
-   Learning Classifier System (LCS), developed in the early 1980s,
-   incorporated a reinforcement learning algorithm known as the bucket
-   brigade for non-Markovian environments, anticipating by nearly a
-   decade non-Markovian learning algorithms."
-\item Exploitation versus exploration -- relevance to reinforcement
-  learning, other parts of machine learning and optimization.
-\item Active learning.  (Two-armed bandit problem.) 
-\item On-line learning.  
-\end{itemize}
 
 \section{Conclusion}
 
-Introduced a few generations of students to computation in natural systems, an idea that today is better accepted.  His insights were deeper and more general than what often passes for work in biomimicry, e.g., for robots.
+Holland was unusual in his ability to absorb the essence of other
+disciplines, articulate grand overarching
+theories, and them back them up with computational mechanisms and
+mathematics.  Unlike most researchers he moved seamlessly among these
+three modes of thinking, developing models that were years ahead of their time.  A
+close reading of his work reveals the antecedents of many ideas prevalent in
+machine learning today, e.g., reinforcement, learning in non-Markovian
+environments, active learning, etc.   His seminal genetic algorithm
+spawned the field of evolutionary computation, and his insights
+and wisdom helped define what are now referred to as the
+\emph{sciences of complexity}.   With such a broad scope, it is easy
+to pick at the details.
 
-The ideas have had huge impact and should still be a beacon for research in intelligent and complex systems
+His many books and articles have influenced 
+scientists around the work and across many disciplines.  Closer to home, he introduced several
+generations of students at the University of Michigan to 
+computation in natural systems, an idea that even today
+remains somewhat controversial, despite successes in biomimicry
+for robotics, abstractions of phermone trails in ant colonies for
+optimization methods, the use of mechanisms from immunology to
+improve computer security, and recent work on technological
+evolution.  
 
-John's personality and humanity is inextricably tangled up with his intellectual contributions.
+Behind the ideas, of course, is the man himself.   Everyone who knew
+John personally will remember the gleam in his eye when he
+encountered a new idea; his willingness to talk to anyone, no matter
+how famous or how unfamous; and his incredible generosity and patience.
+%His insights aboutwere deeper and more general than what often passes for work in biomimicry, e.g., for robots.
+Holland's personality and humanity were somehow inextricably tangled
+up with his intellectual contributions, and although his ideas will serve as a beacon
+for research in intelligent and complex systems
+for many years to come, the world of science is poorer without John
+Holland on the scene.
+
+
+% \begin{itemize}
+% \item Evolutionary computation
+% \item Q Learning
+% \item Backprop
+% \item    From Turing nomination: "Holland's machine learning system known as the
+%    Learning Classifier System (LCS), developed in the early 1980s,
+%    incorporated a reinforcement learning algorithm known as the bucket
+%    brigade for non-Markovian environments, anticipating by nearly a
+%    decade non-Markovian learning algorithms."
+% \item Exploitation versus exploration -- relevance to reinforcement
+%   learning, other parts of machine learning and optimization.
+% \item Active learning.  (Two-armed bandit problem.) 
+% \item On-line learning.  
+% \end{itemize}
 
 \bibliographystyle{plain}
 
