@@ -53,43 +53,41 @@ by biological evolution.  Since their invention in the 1960s, GAs have
 inspired many related methods and led to the thriving subfield of
 \emph{evolutionary computation}, with widespread scientific and
 commercial applications.  While the mechanisms of GAs are well-known,
-%Holland's broader motivations are less widely appreciated---to develop a 
-%general theory of adaptation in complex systems.  
 they were only one
 offshoot of Holland's broader motivation---to develop a general
 theory of adaptation in complex systems.  
-%This motivation was the
-%driving force in all of Holland's research.   
-%to much of the computer science community, 
-%the ideas that motivated Holland are less widely appreciated---to develop a general
-%Holland's motivation 
-%offshoot of Holland's much broader motivation--
-%This motivation was the
-%driving force in all of Holland's research.
 
 In this short essay, we consider this larger framework, sketching the
 recurring themes that were central to Holland's theory of
 adaptive systems: (1) discovery and 
 dynamics in adaptive search; (2) internal models and prediction; (3) 
 exploratory modeling; and (4) universal properties of complex adaptive systems.  
-%We discuss the role these
-%themes have played in computer science, and highlight especially the
-%ideas that we think remain relevant to today's research agendas.  [MM
-%says: Are we going to do this?]
 
 \section{Discovery and Dynamics in Adaptive Search} 
 
+<<<<<<< Updated upstream
 Holland's goal of developing a general theory of adaptation 
 %spurred
 began with his early work on computer models of Hebbian learning
 \cite{Rochester1956} and his reading of Ronald Fisher's classic book
 that integrated genetics with Darwinian selection \cite{Fisher1930}.
 As Holland read extensively in evolutionary biology,
+=======
+Holland's goal of developing a general theory of adaptation was
+spurred both by his early work on computer models of Hebbian learning
+\cite{Rochester1956} and his reading of Ronald Fisher's classic book
+on integrating genetics with Darwinian selection \cite{Fisher1930}.
+As Holland further read extensively in evolutionary biology,
+>>>>>>> Stashed changes
 economics, game theory, and control theory, he came to recognize that
 adaptation was the most central concept in all these fields.  That is,
 these fields all concern populations of agents that must continually
 obtain information from uncertain changing environments and use it in
+<<<<<<< Updated upstream
 order to improve performance and enhance the chance of survival. 
+=======
+order to enhance their chance of survival. 
+>>>>>>> Stashed changes
 
 Moreover, Holland recognized that adaptation must be a continual
 open-ended process due to perpetually uncertain and changing
@@ -109,6 +107,7 @@ Underlying Holland's theory of adaptation are the following core ideas.
 % Adaptation occurs in
 % populations of individuals evolving (or learning) over time, in
 % which statistics can be leveraged to direct population dynamics.
+<<<<<<< Updated upstream
 %  The process of adaptive 
   Evolution can be framed as a search that leverages statistics to
   direct population dynamics.  A population can be thought of as a
@@ -119,6 +118,17 @@ Underlying Holland's theory of adaptation are the following core ideas.
   large-scale sampling of traits ``implicit parallelism.''
   Evolutionary dynamics biases these samples over time towards
   high-fitness regions of the search space.
+=======
+  The process of adaptive evolution can be framed as a search that leverages
+  statistics to direct population dynamics.  A
+  population can be thought of as a parallel sampling of many
+  individuals (from the space of possible individuals).  Moreover,
+  that same population can be thought of as implicitly sampling a much
+  larger space of \emph{traits} that comprise those individuals.
+  Holland termed this implicit large-scale sampling of traits
+  ``implicit parallelism.''  Evolutionary dynamics biases these
+  samples over time towards high-fitness regions of the search space.
+>>>>>>> Stashed changes
 
 %The population can be
 %  thought of as a set of samples in a much larger search space, where
@@ -190,12 +200,21 @@ The question of how to balance exploitation and exploration---how to
 optimally allocate trials to different arms based on their observed 
 payoff---now becomes the question of how to optimally sample in the
 vast space of possible building blocks, based on their estimated
+<<<<<<< Updated upstream
 contribution to fitness.  Of course, evolution deals in populations of
 individuals, not building blocks.  There is no {\emph explicit} mechanism for
 keeping statistics on how building blocks contribute to fitness. 
 Holland's central idea here is that an approximation to
 optimal building-block sampling does implicitly occur, as an emergent
 property of evolutionary population dynamics.
+=======
+contribution to fitness.  Of course adaptive evolution deals in populations of
+individuals, not building blocks.  There is no {\emph explicit} mechanism for
+keeping statistics on how building blocks contribution to fitness. 
+However, Holland's central idea here is that an approximation to
+optimal building-block sampling does implicitly occur, as an emergent
+property of the population dynamics.
+>>>>>>> Stashed changes
 
 Several of Holland's early papers (e.g.,
 \cite{Holland1962,Holland1973}) and his influential 1975 book
@@ -208,9 +227,27 @@ critical operation that allowed successful building blocks to be
 recombined and tested in new contexts.  Holland's aim, however, was
 more general than a new class of algorithms---his goal was an
 interdisciplinary theory of adaptation, one that would inform biology, 
+<<<<<<< Updated upstream
 say, as much as computer science \cite{Christiansen1998}.  The later, successful application of
 genetic algorithms to real-world optimization and learning tasks was,
 for Holland, just icing on the cake.
+=======
+say, as much as computer science \cite{Christiansen1998}.
+
+%What made GAs unique
+%among other evolution-inspired algorithms at the time were the
+%mathematical foundations described above, the emphasis on populations
+%and recombination as central mechanisms,
+%and a focus 
+%(at least in Holland's mind) [MM SAYS: THIS SOUNDS TOO NEGATIVE]
+%on continual adaptation in
+%non-stationary environments rather than optimization in static
+%environments.
+
+%The later, successful application of
+%genetic algorithms to real-world optimization and learning tasks was,
+%for Holland, just icing on the cake.
+>>>>>>> Stashed changes
 
 % SF liked 'icing on the cake.'
 
@@ -234,9 +271,14 @@ for Holland, just icing on the cake.
 
 Internal models are central to Holland's theory of adaptive systems.
 He posits that all adaptive systems create and use internal models to
+<<<<<<< Updated upstream
 prosper in the face of ``perpetual novelty.'' 
 %in continually changing environments.  
 Models can be tacit and learned through evolutionary
+=======
+prosper in the face of ``perpetual novelty'' in continually changing
+environments.  Models can be tacit and learned through evolutionary
+>>>>>>> Stashed changes
 time, as in the case of bacteria swimming up a chemical gradient, or
 explicit and learned over a single lifespan, as in the case of
 cognitive systems that incorporate experience into internal
@@ -335,7 +377,11 @@ learning.
 Holland's inspiration for classifier systems came from several
 different disciplines, including Hebbian
 learning, artificial intelligence, evolutionary biology, economics,
+<<<<<<< Updated upstream
 psychology, and control theory.
+=======
+psychology, control theory, and other fields.
+>>>>>>> Stashed changes
 % MM says: We cite these elsewhere in the paper
 %(e.g.,\cite{Bellman1961,Samuel1959}).  
 Knowledge representation in the form of a
@@ -349,10 +395,15 @@ The if-then rules, when activated, compete to post their results on a
 shared ``message list,'' serving as the system's short-term memory
 (again inspired by Hebb's work and AI blackboard systems of the day).
 Unlike blackboard systems, however, new rules are generated automatically
+<<<<<<< Updated upstream
 in a trial-and-error fashion.
 % SF reverted this because lcs had several non-GA learning mechanisms,
 % like 'covering'
 %using a genetic algorithm.  
+=======
+%in a trial-and-error fashion
+using a genetic algorithm.  
+>>>>>>> Stashed changes
 
 Successful rules are strengthened over time if their predictions led
 to positive rewards from the environment (and weakened otherwise)
@@ -582,7 +633,11 @@ in response to intermittent feedbacks from the environment could be
 integrated into domain-specific settings.
 
 ECHO \cite{Holland1999,Hraber1997} was an even more ambitious exploratory model
+<<<<<<< Updated upstream
 that Holland and collaborators developed next. 
+=======
+that Holland and collaborators developed during the 1990s. 
+>>>>>>> Stashed changes
 % ECHO's
 % scope included the evolution of interacting populations of individual
 % agents, which through competition and learning discover symbiotic
@@ -595,6 +650,7 @@ a runnable computational system where agents evolved external markers
 resources, form higher
 level aggregate structures (such as trading relationships, symbiotic groups,
 trophic cascades, interdependent organizations, etc.).  ECHO agents
+<<<<<<< Updated upstream
 sometimes discovered mimicry and used it to deceive competitors.  
 In many runs,  
 the model developed increasingly complex structures and behaviors up
@@ -604,6 +660,17 @@ was found to reproduce several well-known patterns
 observed in nature, most famously the rank-frequency distribution of
 species diversity known as the Preston curve in ecology.
 In layman's terms, ECHO evolved populations where 
+=======
+sometimes discovered mimicry to deceive competitors, and over time,
+the model developed increasingly complex structures and behaviors.
+% at least up to a point.  
+ECHO reproduced several well-known patterns 
+observed in nature.  For example, over time the population of ECHO
+evolved agents exhibited diversity of agent types, diversity with a 
+rank-frequency distribution that
+closely paralleled the well-known Preston curve in ecology.  In
+layman's terms, ECHO evolved populations where 
+>>>>>>> Stashed changes
 %quantitative statement of the adage that
 ``most species are rare.''  
 The broad scope of the model, together with its ability to produce

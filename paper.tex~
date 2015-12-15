@@ -3,7 +3,7 @@
 
 \newcommand{\red}[1]{\textcolor{red}{#1}}
 
-%\title{Adaptation Writ Large:\\ An Essay in Memory of JohnH. Holland}
+%\title{Adaptation Writ Large:\\ An Essay in Memory of John H. Holland}
 
 \title{Adaptative Computation:\\ An Essay in Memory of John H. Holland}
 
@@ -31,89 +31,128 @@ Melanie Mitchell \\
 \section{Introduction}
 
 Professor John H. Holland passed away recently in Ann Arbor, MI, where
+<<<<<<< Updated upstream
+he had served on the University of Michigan faculty for over 50 years.
+=======
 he had been on the University of Michigan faculty for over 50 years.
+>>>>>>> Stashed changes
 John, as he was known universally to his colleagues and students,
-leaves behind a long legacy of intellectual achievements.  
+leaves behind a long legacy of intellectual achievements.
 
-John was a direct intellectual descendant of the cybernetics era, and
-early on was strongly influenced by the work of von Neumann, Wiener,
-Ashby, and Turing, all of whom viewed computation as a broad,
-interdisciplinary enterprise.  Thus, John became an early proponent of
-interdisciplinary approaches to computer science and was an active
-evangelist of what is now called \emph {computational thinking}, reaching out
-enthusiastically to psychologists, economists, physicists, linguists,
-philosophers, and pretty much anyone he came in contact with.  As a
-result, even though he received what was arguably the world's first
-computer science Ph.D. in 1959, his contributions are sometimes better known
-outside of CS than within.
+As a descendant of the cybernetics era, Holland was strongly
+influenced by the work of von Neumann, Wiener, Ashby, and Turing, all
+of whom viewed computation as a broad, interdisciplinary enterprise.
+Thus, Holland became an early proponent of interdisciplinary
+approaches to computer science and an active evangelist of what is now
+called \emph{computational thinking}, reaching out enthusiastically to
+psychologists, economists, physicists, linguists, philosophers, and
+pretty much anyone he came in contact with.  As a result, even though
+he received what was arguably the world's first computer science
+Ph.D. in 1959, his contributions are sometimes better known outside of
+computer science than within.
 
-John Holland is best known for his invention of {\emph genetic
-  algorithms} (GAs), a family of search and learning methods inspired
-by biological evolution.  Since their invention in the 1960s, GAs,
-along with related evolutionary computation methods, have become a
-thriving subfield of computer science, with widespread scientific and
-commercial applications.  While the mechanisms of GAs are well-known
-to much of the CS community, fewer are aware that GAs were only one
-offshoot of Holland's much broader motivation---to develop a general
-theory of adaptation in complex systems.  This motivation was the
-driving force in all of Holland's research.   
+Holland is best known for his invention of \emph{genetic
+  algorithms} (GAs), a family of search and optimization methods inspired
+by biological evolution.  Since their invention in the 1960s, GAs have
+inspired many related methods and led to the thriving subfield of
+\emph{evolutionary computation}, with widespread scientific and
+commercial applications.  While the mechanisms of GAs are well-known,
+<<<<<<< Updated upstream
+%Holland's broader motivations are less widely appreciated---to develop a 
+%general theory of adaptation in complex systems.  
+they were only one
+offshoot of Holland's broader motivation---to develop a general
+theory of adaptation in complex systems.  
+%This motivation was the
+%driving force in all of Holland's research.   
+=======
+less widely appreciated was Holland's broader motivation---to develop a 
+general theory of adaptation in complex systems.  
 
-In this short essay, we sketch three key, recurrent themes of
-Holland's work on adaptive systems: (1) the evolutionary dynamics of
-``building blocks''; (2) internal models and perpetual novelty; and
-(3) complex systems and the art of scientific modeling.  We discuss
-the role these themes have played in computer science, and highlight
-especially the ideas that we think remain relevant to today's research
-agendas.
+>>>>>>> Stashed changes
+%to much of the computer science community, 
+%the ideas that motivated Holland are less widely appreciated---to develop a general
+%Holland's motivation 
+%offshoot of Holland's much broader motivation--
+%This motivation was the
+%driving force in all of Holland's research.
 
-\section{Evolutionary Dynamics of ``Building Blocks''}  
+In this short essay, we consider this larger framework, sketching the
+recurring themes that were central to Holland's theory of
+adaptive systems: (1) discovery and 
+dynamics in adaptive search; (2) internal models and prediction; (3) 
+exploratory modeling; and (4) universal properties of complex adaptive systems.  
+%We discuss the role these
+%themes have played in computer science, and highlight especially the
+%ideas that we think remain relevant to today's research agendas.  [MM
+%says: Are we going to do this?]
 
+\section{Discovery and Dynamics in Adaptive Search} 
+
+<<<<<<< Updated upstream
+Holland's goal of developing a general theory of adaptation 
+%spurred
+began with his early work on computer models of Hebbian learning
+\cite{Rochester1956} and his reading of Ronald Fisher's classic book
+that integrated genetics with Darwinian selection \cite{Fisher1930}.
+As Holland read extensively in evolutionary biology,
+=======
 Holland's goal of developing a general theory of adaptation was
 spurred both by his early work on computer models of Hebbian learning
-\cite{Rochester1956} and his reading of Ronald Fisher's classic work
+\cite{Rochester1956} and his reading of Ronald Fisher's classic book
 on integrating genetics with Darwinian selection \cite{Fisher1930}.
 As Holland further read extensively in evolutionary biology,
+>>>>>>> Stashed changes
 economics, game theory, and control theory, he came to recognize that
 adaptation was the most central concept in all these fields.  That is,
 these fields all concern populations of agents that must continually
 obtain information from uncertain changing environments and use it in
-order to improve their performance with respect to those environments.
-Moreover, Holland recognized that for adaptive systems, there is never
-a state of {\emph equilibrium} or a final \emph{optimum}
-configuration.  Due to the environment's perpetual novelty,
-%SF thinks Holland did not invent this term (as Holland termed it), 
-adaptation is a continual 
-open-ended process.  Holland's focus on open-ended,
-non-equilibrium dynamics was in stark contrast with the mainstream
-approach (at the time) in all these fields---the belief that solving
-for stable equilibrium dynamics was the scientific goal.  Holland's
-contrary view was that a system in stable equilibrium is essentially
-\emph{dead}.
+<<<<<<< Updated upstream
+order to improve performance and enhance the chance of survival. 
+=======
+order to enhance their chance of survival. 
+>>>>>>> Stashed changes
 
-% Text that STEPH found in our NIPS paper on the IGA
-% First, at least theoretically the GA is fast because of implicit
-% parallelism (Holland, 1975/1992): each string in the population is an
-% instance of many different schemas, and if the population is large
-% enough and is initially chosen at random, a large number of different
-% schemas-many more than the number of strings in the population-are
-% being sampled in parallel.  This should result in a quick search for
-% short, low-order schemas that confer high fitness.  Second,
-% fitness-proportionate reproduction under the GA should conserve
-% instances of such schemas.  Third, a high crossover rate should
-% quickly combine instances oflow-order schemas on different strings to
-% create instances of longer schemas that confer even higher fitness.
+Moreover, Holland recognized that adaptation must be a continual
+open-ended process due to perpetually uncertain and changing
+environments.  Thus, adaptive systems never achieve a state of
+equilibrium or a final optimum configuration.  This emphasis on
+open-ended, non-equilibrium dynamics was in stark contrast with the
+mainstream approach (at the time) in all these fields---the belief
+that solving for stable equilibrium dynamics was the scientific goal.
+Holland's contrary view was that a system in stable equilibrium is
+essentially \emph{dead}.
 
-
-Underlying Holland's theory of adaptation are the following core ideas: 
+Underlying Holland's theory of adaptation are the following core ideas.  
 
 \begin{itemize}
-\item{\bf Populations and implicit parallelism:} Adaptation occurs in
-  populations of individuals evolving (or learning) over time, in
-  which statistics can be leveraged to direct population dynamics.  A
-  population of individuals can be thought of as a set of samples
-  taken from a much larger search space.  Importantly, the populations
-  are competitive, and evolutionary dynamics biases the set of
+\item{\bf Populations, sampling, and implicit parallelism:} 
+
+% Adaptation occurs in
+% populations of individuals evolving (or learning) over time, in
+% which statistics can be leveraged to direct population dynamics.
+<<<<<<< Updated upstream
+%  The process of adaptive 
+  Evolution can be framed as a search that leverages statistics to
+  direct population dynamics.  A population can be thought of as a
+  parallel sampling of many individuals (from the space of possible
+  individuals).  Moreover, that same population can be thought of as
+  implicitly sampling a much larger space of \emph{traits} that
+  comprise those individuals.  Holland termed this implicit
+  large-scale sampling of traits ``implicit parallelism.''
+  Evolutionary dynamics biases these samples over time towards
+  high-fitness regions of the search space.
+=======
+  The process of adaptive evolution can be framed as a search that leverages
+  statistics to direct population dynamics.  A
+  population can be thought of as a parallel sampling of many
+  individuals (from the space of possible individuals).  Moreover,
+  that same population can be thought of as implicitly sampling a much
+  larger space of \emph{traits} that comprise those individuals.
+  Holland termed this implicit large-scale sampling of traits
+  ``implicit parallelism.''  Evolutionary dynamics biases these
   samples over time towards high-fitness regions of the search space.
+>>>>>>> Stashed changes
 
 %The population can be
 %  thought of as a set of samples in a much larger search space, where
@@ -122,17 +161,15 @@ Underlying Holland's theory of adaptation are the following core ideas:
 %  can be leveraged to direct population dynamics.  (More on this below.)  
 
 \item{\bf Building blocks and recombination:} 
-% Melanie rewrote this some to take out references to ``solutions''
   In a population undergoing adaptation,
-  individuals can be decomposed into {\emph building blocks}---sets of
+  individuals can be decomposed into \emph{building blocks}---sets of
   traits that are the evolutionary ``atoms'' of an individual's
   fitness or performance. (As an example from biology, Holland gives
-  the {\emph Krebs cycle}, a core cellular metabolic
+  the \emph{Krebs cycle}, a core cellular metabolic
   pathway.)   Successful individuals
   are discovered in stages, first by finding useful
   building blocks through random sampling, and over
   time recombining such building blocks to create higher-fitness individuals. 
-
 
 %  For example, when searching the space of
 %  all $n$-bit binary strings, almost any random sample would contain
@@ -142,168 +179,153 @@ Underlying Holland's theory of adaptation are the following core ideas:
 %  1.  More compelling examples include the \emph{Krebs cycle}, a core
 %  cellular metabolic pathway, 
 
-  To succeed, such a search requires first that
-  useful building blocks be preserved once found, and second, that
-  there be an efficient mechanism for combining promising building
-  blocks into higher-order building blocks.  Holland proposed using an
-  analog of Darwinian selection for the first and the idea of crossing
-  over in genetics for the second.  Holland referred to the building
-  blocks as \emph{schemas.} 
-%which correspond mathematically to hyperplanes in the search space. MM: this makes sense only in bit-string example.  
+%  To succeed, such a search requires first that
+%  useful building blocks be preserved once discovered, and second that
+%  there be an efficient mechanism for combining promising building
+%  blocks into higher-order building blocks.  Holland proposed using an
+%  analog of Darwinian selection for the first and the idea of crossing
+%  over in genetics for the second.  Holland referred to the building
+%  blocks as \emph{schemas} and defined them as hyperplanes in the search space. 
 
 %In a population undergoing adaptation,
-%  individuals can be decomposed into {\emph building blocks}---sets of
+%  individuals can be decomposed into \emph{building blocks}---sets of
 % traits that are the evolutionary ``atoms'' of an individual's
 %  fitness or performance. 
 
 \item{\bf Exploitation Versus Exploration:} Successful adaptation
-  requires maintaining a balance between {\emph exploitation}, in which
-  tried-and-true building blocks propagate in a population, and {\emph
-    exploration}, in which existing building blocks are recombined or
-  mutated in new ways.  
-%A system that focuses too much on exploitation
-%  risks never finding better individuals or not being able to adapt to
-%  changing environments.  Conversely, too much focus on exploration
-%  means that the system won't leverage the successful building blocks
-%  that have already been discovered.  %There is some optimal balance
-%  between these two modes of processing.
-\end{itemize}
+  requires maintaining a balance between \emph{exploitation}, in which
+  successful building blocks propagate in a population, and
+  \emph{exploration}, in which existing building blocks are recombined
+  or mutated in new ways.
 
-Several of Holland's early papers (e.g.,
-\cite{Holland1962,Holland1973}) and his influential
-1975 book {\emph Adaptation in Natural and Artificial Systems}
-\cite{Holland1975} developed a general, formal setting in which these ideas
-could be expressed mathematically.
+\end{itemize} 
 
 Inspired by Bellman \cite{Bellman1961} and
-others, Holland explored the exploitation-versus-exploration tradeoff
-via an idealized ``two-armed bandit'' problem.  Given a slot machine
+others, Holland formalized the exploitation-versus-exploration tradeoff
+via an idealized ``two-armed bandit'' problem. Given a slot machine
 with two arms, each of which has an unknown payoff probability, how
-should you allocate $N$ trials (pulls) between the arms so as to
-maximize your total payoff?  An example of an extreme {\emph
-  exploitation} strategy would be to alternate between the arms until
-one of them gives a payoff, and then allocate all future trials to
-that arm alone.  Conversely, an example of an extreme {\emph
-  exploration} strategy would be to randomly allocate the trials,
-irrespective of the payoff rates you obtain.  Obviously, each of these
-strategies is flawed.  What is an optimal strategy?
-In \cite{Holland1973,Holland1975} Holland derived
-an equation for such a strategy and argued that the optimal strategy
-allocated trials to the observed best arm at a slightly higher rate than
-exponential.  
-% SF used 'argue' because some claim that his derivation was wrong.
-He then extended this 
-% Let $A$ denote the arm currently
-%observed to have the higher payoff probability, and $B$ denote the
-%other arm.  Holland showed that the optimal strategy (the one that
-%yields maximal payoff, or minimal loss) is for the number of trials
-%allocated to $A$ to grow slightly faster than an exponential function
-%of the number of trials allocated to $B$.  Holland then showed that this
-result to the {\emph multi-armed bandit} case.
+should you allocate trials (pulls) between the arms so as to
+maximize your total payoff?   In \cite{Holland1973,Holland1975}
+Holland argued that the optimal strategy
+allocates trials to the observed best arm at a slightly higher rate than
+an exponential function of the trials allocated to the observed worse arm.  
 
-In Holland's formulation, building blocks in a population undergoing adaptation
-consitute the ``arms'' of a multi-armed bandit.  Each building block can be said to
-have a probability of ``payoff'' (i.e., contribution to a given
-individual's fitness).  
-%Evaluating an individual in an environment is
-%like ``pulling the arms'' on a multi-armed bandit, where the ``arms''
-%correspond to each of the building blocks making up that individual.
-Thus, in the process of assigning a fitness to each individual in a
-population, adaptive evolution can be seen as implicitly sampling the
-many building blocks making up that collection of individuals.  The
-average fitness over many individuals containing a particular building
-block gives an estimate of that building block's payoff probability.
+Next, Holland showed that in populations undergoing adaptation,
+building blocks are analogous to arms on a multi-armed bandit.  
+%Thus,
+%in the process of assigning a fitness to each individual in a
+%population, adaptive evolution can be seen as implicitly sampling the
+%many building blocks making up that collection of individuals.
+Evaluating an individual in an environment is analogous to pulling selected
+arms on a multi-armed bandit, where the arms correspond to each of the
+building blocks making up that individual.
 
-% The question of how to balance exploitation and exploration---how to
-% optimally allocate trials to different arms based on their observed
-% payoff---now becomes the question of how to optimally sample in the
-% vast space of possible building blocks, based on their observed
-% average fitness.  Of course adaptive evolution deals in populations of
-% individuals, not building blocks.  There is no explicit mechanism for
-% keeping statistics on building blocks' ``observed average fitness''.
-% However, Holland's central idea here is that an approximation to
-% optimal building-block sampling does indeed occur, as an emergent
-% property of the population dynamics.
+The question of how to balance exploitation and exploration---how to
+optimally allocate trials to different arms based on their observed 
+payoff---now becomes the question of how to optimally sample in the
+vast space of possible building blocks, based on their estimated
+<<<<<<< Updated upstream
+contribution to fitness.  Of course, evolution deals in populations of
+individuals, not building blocks.  There is no {\emph explicit} mechanism for
+keeping statistics on how building blocks contribute to fitness. 
+Holland's central idea here is that an approximation to
+optimal building-block sampling does implicitly occur, as an emergent
+property of evolutionary population dynamics.
+=======
+contribution to fitness.  Of course adaptive evolution deals in populations of
+individuals, not building blocks.  There is no {\emph explicit} mechanism for
+keeping statistics on how building blocks contribution to fitness. 
+However, Holland's central idea here is that an approximation to
+optimal building-block sampling does implicitly occur, as an emergent
+property of the population dynamics.
+>>>>>>> Stashed changes
 
-%Holland argued that an approximation to
-%optimal building-block sampling actually occurs, as an emergent
-%property of the population dynamics defined by a
-% To show this mathematically, he defined an idealization of
-%adaptive evolution: an algorithm he called a {\emph reproductive
-% plan}.
-To show this mathematically, Holland defined an idealization of adaptive evolution: 
-a population-based stochastic process
-operating on bit strings, involving the ``genetic'' operators of
- reproduction, fitness-based selection, crossover, mutation, and
- inversion.  
-%Building blocks are formalized as {\emph
-%   schemata}---patterns of bits within a string. (Here are two examples
-% of schemas: ``all strings beginning with the bits 10'' or ``all
-% strings that start with the pattern 1*1'', where * can be replaced by
-% either 0 or 1).
-
-% Holland's most important result was the following: He proved
-% mathematically that his reproductive plan results---implicitly---in a
-% near-optimal allocation of trials to schemata, thus optimizing the
-
-% exploitation versus exploration balance.  Holland noted that the
-% explicit act of assigning fitnesses to the individuals in a population
-% was actually implicitly sampling a much larger collection of building
-% blocks.  Holland termed this {\emph implicit parallelism}; the
-% parallel leveraging of statistics from implicit sampling is a main
-% strength of his population-based approaches to search.
-
-It was this formalization
-% and resulting theorems that led to the
-that led to the invention of genetic algorithms, which featured stochastic
-population-based search, as well as
-%recombination as a critical
-crossover between individuals as a critical
-operation that allowed successful building blocks to be recombined and
-tested in new contexts.  What made GAs unique
-among other evolution-inspired algorithms at the time were the
-mathematical foundations described above, the emphasis on populartions
-and recombination as a central mechanism,
-and a focus (at least in Holland's mind) on continual adaptation to
-non-stationary environments rather than optimization to static
-environments.
-
-The framework Holland developed in \cite{Holland1975} was more general
-than the genetic algorithm; its aim was an interdisciplinary theory of
-adaptation, one that would inform biology, say, as much as computer
-science \cite{Christiansen1998}.  The later, successful application of
+Several of Holland's early papers (e.g.,
+\cite{Holland1962,Holland1973}) and his influential 1975 book
+\emph{Adaptation in Natural and Artificial Systems} \cite{Holland1975}
+developed a general, formal setting in which these ideas could be
+expressed mathematically.  It was this formalization that led to the
+invention of genetic algorithms, which featured stochastic
+population-based search, as well as crossover between individuals as a
+critical operation that allowed successful building blocks to be
+recombined and tested in new contexts.  Holland's aim, however, was
+more general than a new class of algorithms---his goal was an
+interdisciplinary theory of adaptation, one that would inform biology, 
+<<<<<<< Updated upstream
+say, as much as computer science \cite{Christiansen1998}.  The later, successful application of
 genetic algorithms to real-world optimization and learning tasks was,
 for Holland, just icing on the cake.
+=======
+say, as much as computer science \cite{Christiansen1998}.
 
-\section{Internal Models and Perpetual Novelty}
+%What made GAs unique
+%among other evolution-inspired algorithms at the time were the
+%mathematical foundations described above, the emphasis on populations
+%and recombination as central mechanisms,
+%and a focus 
+%(at least in Holland's mind) [MM SAYS: THIS SOUNDS TOO NEGATIVE]
+%on continual adaptation in
+%non-stationary environments rather than optimization in static
+%environments.
+
+%The later, successful application of
+%genetic algorithms to real-world optimization and learning tasks was,
+%for Holland, just icing on the cake.
+>>>>>>> Stashed changes
+
+% SF liked 'icing on the cake.'
+
+%What made GAs unique
+%among other evolution-inspired algorithms at the time were the
+%mathematical foundations described above, the emphasis on populations
+%and recombination as central mechanisms,
+%and a focus 
+%(at least in Holland's mind) [MM SAYS: THIS SOUNDS TOO NEGATIVE]
+%on continual adaptation in
+%non-stationary environments rather than optimization in static
+%environments.
+
+
+
+%\section{Internal Models and Perpetual Novelty}
+\section{Internal Models and Prediction}
 
 %One system of special interest to Holland was the human mind, and in
 %particular, its capacity to learn via induction.
 
-Internal models are central to Holland's theory of adaptive
-systems.  He posits that all adaptive systems create and use internal
-models to prosper in the face of ``perpetual novelty'' in continually changing environments.   Models can be tacit and learned
-  through evolutionary time, as in the case of bacteria swimming up a
-  chemical gradient, or explicit and learned over a single lifespan,
-  as in the case of cognitive systems that incorporate experience into
-  internal representations through learning.  In
-  Holland's view, the key activity of an adaptive agent involves
-  building and refining these data-driven models
-  of the environment.
+Internal models are central to Holland's theory of adaptive systems.
+He posits that all adaptive systems create and use internal models to
+<<<<<<< Updated upstream
+prosper in the face of ``perpetual novelty.'' 
+%in continually changing environments.  
+Models can be tacit and learned through evolutionary
+=======
+prosper in the face of ``perpetual novelty'' in continually changing
+environments.  Models can be tacit and learned through evolutionary
+>>>>>>> Stashed changes
+time, as in the case of bacteria swimming up a chemical gradient, or
+explicit and learned over a single lifespan, as in the case of
+cognitive systems that incorporate experience into internal
+representations through learning.  In Holland's view, the key activity
+of an adaptive agent involves building and refining these data-driven
+models of the environment.
 %using them to make predictions and take actions,
 %  and occasionally receiving positive or negative feedbacks
 %  (intermittent rewards).
 
 In his second book, \emph{Induction} \cite{Holland1989}, Holland and
-his co-authors tackled the question of how cognitive agents can
-possibly learn and profit from internal models by combining
+his co-authors proposed inductive methods by which 
+%tackled the question of how 
+cognitive agents can
+%learn 
+construct---and profit from---internal models by combining
 environmental inputs and rewards with stored knowledge.  In their
 framework, a model defines a set of equivalence relations over
-environmental states, together with a set of transition rules, which
+environmental states, together with a set of transition rules which
 are learned over time based on environmental rewards (or punishments).
 Models that form valid homomorphisms with the environment allow the
 system to make accurate predictions.  In Holland's conception, the
-equivalence classes are initially very general, say ``moving object''
+equivalence classes are initially very general, for example, ``moving object''
 and ``stationary object.'' Through experience and
 learning, these can be specialized into more useful and precise subclasses, say
 ``insect'' and ``nest.''  Over time, the adaptive system builds up a
@@ -331,16 +353,24 @@ and simulation \cite{Ziegler1976}.
 Even today, these early homomorphic theories of modeling
 stand as the most elegant approach we know of to characterize when
 a model is consistent with the environment and how an intelligent
-agent, human or artificial, can update the model to better reflect
+agent, human or artificial, can update a model to better reflect
 reality.
 
 Holland's second key contribution was describing a computational
 mechanism, the \emph{learning classifier
-  system}~\cite{Holland1977,Holland1986}, to illustrate how a cognitive system could
+  system}~\cite{Holland1986,Holland1977}, to illustrate how a cognitive system could
 iteratively build up a detailed and hierarchical model of its
 environment to enhance survival.  The key learning elements of this method, the
 bucket-brigade algorithm combined with a genetic algorithm, presaged many of the ideas in modern reinforcement
 learning. 
+
+%Offspring rules, which begin life weaker than do their parents, can
+%win the competition and influence the system's behavior only when
+%there are not strong rules whose conditions are satisfied---in other
+%words when the system does not know what to do.  If their actions
+%help, they survive; if not they are soon replaced.  
+%Thus,
+
 
 %including unsupervised learning, non-Markovian learning, AND
 %ONE OTHER?.
@@ -351,11 +381,11 @@ learning.
 
 % In the 1970s and 80s Holland formulated and extensively explored a
 % particular model of decision-making, action, and inductive learning,
-% called the {\emph classifier system} (e.g.,)
+% called the \emph{classifier system} (e.g.,)
 % .  In a classifier system, a population
 % of ``if-then'' rules interacts with an environment, and over time is
-% able to learn to improve its performance via both {\emph
-%   credit-assignment} and {\emph rule-discovery} algorithms.
+% able to learn to improve its performance via both \emph{
+%   credit-assignment} and \emph{rule-discovery} algorithms.
 
 % Like genetic algorithms, classifier systems can be viewed both as 
 % models of adaptation and as artificial-intelligence (AI) methods.  At
@@ -365,60 +395,50 @@ learning.
 % are brittle in the sense that they respond appropriately only in
 % narrow domains, requiring substantial human intervention to compensate
 % for even slight shifts in domain'' \cite{Holland1986}. In
-% contrast, Holland proposed that ``{\emph induction} is the basic, and
+% contrast, Holland proposed that ``\emph{induction} is the basic, and
 % perhaps only, way of making large advances in this direction.''
 
 Holland's inspiration for classifier systems came from several
 different disciplines, including Hebbian
 learning, artificial intelligence, evolutionary biology, economics,
-psychology, control theory, and other fields (e.g.,
-\cite{Bellman1961,Samuel1959}).  Knowledge representation in the form of a
+<<<<<<< Updated upstream
+psychology, and control theory.
+=======
+psychology, control theory, and other fields.
+>>>>>>> Stashed changes
+% MM says: We cite these elsewhere in the paper
+%(e.g.,\cite{Bellman1961,Samuel1959}).  
+Knowledge representation in the form of a
 population of ``if-then'' rules seemed like a good choice, not only
 because of its popularity in AI at the time but also from Holland's
-early work on modeling Hebbian cell assemblies: ``In Hebbs view, a
+early work on modeling Hebbian cell assemblies: ``In Hebb's view, a
 cell assembly makes a simple statement: If such and such an event
 occurs, then I will fire for a while at a high
-rate.'' \cite{Waldrop1993} (p. 182).  
+rate'' \cite{Waldrop1993}. 
 The if-then rules, when activated, compete to post their results on a
-shared ``message list,'' modeling the system's short-term memory
+shared ``message list,'' serving as the system's short-term memory
 (again inspired by Hebb's work and AI blackboard systems of the day).
-Unlike the AI systems, however, new rules were generated automatically,
-in a trial-and-error fashion using a genetic algorithm.  
+Unlike blackboard systems, however, new rules are generated automatically
+<<<<<<< Updated upstream
+in a trial-and-error fashion.
+% SF reverted this because lcs had several non-GA learning mechanisms,
+% like 'covering'
+%using a genetic algorithm.  
+=======
+%in a trial-and-error fashion
+using a genetic algorithm.  
+>>>>>>> Stashed changes
 
-Successful rules were strengthened over time if their predictions led
-to positive rewards from the environment (and weakened otherwise).
-through a credit-assignment method called the {\emph bucket-brigade}
+Successful rules are strengthened over time if their predictions led
+to positive rewards from the environment (and weakened otherwise)
+through a credit-assignment method called the \emph{bucket-brigade}
 algorithm, in which rules gaining rewards from the environment or from
-other rules transferred some of their gains to those earlier-firing
+other rules transfer some of their gains to those earlier-firing
 ``stage-setting'' rules that set up the conditions for the eventual
 reward. Holland credited Arthur Samuel's pioneering work on machine
 learning applied to checkers \cite{Samuel1959} as a key inspiration for these ideas.
 
 %, e.g., finding a target, or avoiding a predator,
-
-%Finally, new rules for the population are discovered by a genetic
-%algorithm, using the strength of rules as a fitness function.
-%Classifier systems are fairly complex architectures, with learning
-%occurring at multiple time scales.  
-Although Holland proposed classifier systems as 
-an executable theory of inductive processes in cognition, other researchers took it further, 
-%other researchers took the
-%computational system more seriously
-applying it to areas as diverse
-as poker-playing \cite{Smith1980}, control of gas pipeline
-transmission \cite{Goldberg1983}, and modeling the stock market
-\cite{Palmer1994}.  (See Ref.~\cite{Booker1989} for more details about
-practical applications of classifier systems.)  Today, other
-reinforcement learning methods are more popular for real-world
-decision and control problems, but classifier systems can perhaps be
-thought of as an essential ``stage-setting'' method that enabled the
-development of later approaches.
-
-% \footnote{Of course similar
-%   credit-assignment methods have been used extensively in
-%   reinforcement learning, neural networks, and other areas of modern
-%   machine learning, but Holland was among the first to propose such
-%   methods.}
 
 Holland was primarily interested in how the two
 learning mechanisms (discovery of new rules and apportioning credit to
@@ -438,19 +458,36 @@ respond to a particular situation, that is the equivalent of saying
 that it has certain well-validated hypotheses.... New rules do not
 interfere with the system's action in well-practiced situations but
 wait gracefully in the wings as hypotheses about what to do under
-novel circumstances." \cite{Holland1992}.
+novel circumstances.'' \cite{Holland1992}.
 
-%Offspring rules, which begin life weaker than do their parents, can
-%win the competition and influence the system's behavior only when
-%there are not strong rules whose conditions are satisfied---in other
-%words when the system does not know what to do.  If their actions
-%help, they survive; if not they are soon replaced.  
-%Thus,
+%Finally, new rules for the population are discovered by a genetic
+%algorithm, using the strength of rules as a fitness function.
+%Classifier systems are fairly complex architectures, with learning
+%occurring at multiple time scales.  
+Although Holland proposed classifier systems as 
+an executable theory of inductive processes in cognition, other researchers took it further, 
+%other researchers took the
+%computational system more seriously
+applying it to areas as diverse
+as poker-playing \cite{Smith1980}, control of gas pipeline
+transmission \cite{Goldberg1983}, and modeling the stock market
+\cite{Palmer1994}.  (See Ref.~\cite{Booker1989} for more details about
+practical applications of classifier systems.)  Today, other
+reinforcement learning methods are more popular for real-world
+decision and control problems, but classifier systems can perhaps be
+thought of as an essential stage-setting method that enabled the
+development of later approaches.
 
-\section{The Art of Scientific Modeling}
+% \footnote{Of course similar
+%   credit-assignment methods have been used extensively in
+%   reinforcement learning, neural networks, and other areas of modern
+%   machine learning, but Holland was among the first to propose such
+%   methods.}
+
+\section{Exploratory Modeling}
 
 Given that Holland believed that the ability to learn and manipulate
-internal models was essential for any adapting system, it is no
+internal models was essential for any adaptive system, it is no
 surprise that he viewed modeling as essential for scientific inquiry.
 
 %Today, we use computational models in several distinct ways---as
@@ -467,7 +504,7 @@ mechanisms.  This latter use of models was dear to Holland's heart.
 In his view, the key to science was understanding the mechanisms that
 cause a system to behave in a certain way, an aspiration that goes
 well beyond data fitting methods, which typically focus only on
-describing the aggregate behavior of a system.  
+the aggregate behavior of a system.  
 
 For example, a purely statistical model that describes the boom and bust
 pattern of the stock market
@@ -476,116 +513,135 @@ does not address the underlying mechanisms
 that lead to these cycles, through the collective actions of myriad
 individual buy/sell decisions.  
 %Similarly
-In constrast, the genetic algorithms for which Holland is so famous
+In contrast, the genetic algorithms for which Holland is so famous
 are exploratory models of \emph{mechanism}: they provide a simple
 computational framework in which to explore the dynamics of Darwinian
 evolution and whether the basic mechanisms of variation, differential
 reproduction, and heredity are sufficient to account for the richness
 of our natural world.
 
-The emphasis on exploratory models to build intuitions was an
-important theme of Holland's work, and he often quoted Eddington's
-remark on the occasion of the first experimental test of Einstein's
-theory of relativity: "The contemplation in natural science of a wider
-domain than the actual leads to a far better understanding of the
-actual" \cite{Eddington1927}.
-
-Holland was interested in models that explored basic principles and
-mechanisms, even if they did not make specific or detailed
+Holland's work focused on {\emph exploratory} models---those that explore basic principles and
+mechanisms, even if they do not make specific or detailed
 predictions.  Such models can show generically how certain behaviors
 could be produced.  Holland pioneered a style of modeling that has
-come to be known as 'individual based' or 'agent based,' in which
+come to be known as ``individual-based'' or ``agent-based,'' in which
 every component of a system is represented explicitly---e.g., every
 trader in a stock market system or every cell in an immune system
 model---and has a dynamic internal state. In such models, each agent has
-its own behavior rules, which it can update (or learn) over time.  In
-order to capture the constraints of systems living under spatial
+its own behavior rules, which it can modify over time through learning.  In
+order to capture the behavior of systems under spatial
 constraints, these models are often defined over spatial structures,
 such as networks or simple grids.
 
-A given agent-based model encodes a theory about the mechanisms that
-are relevant for producing the behavior of interest.  Similar to
-expert systems, such models are especially useful for studying systems
-that do not have analytic mathematical descriptions.  Agent-based
-models can facilitate interdisciplinary collaborations because the
-underlying rules can be easily communicated.  The agent-based models
-championed by Holland were typically idealized versions of complex
-systems and not intended to provide detailed, domain-specific
+%MM says:  This next sentence not needed. 
+%A given agent-based model encodes a theory about the mechanisms that
+%are relevant for producing the behavior of interest.  
+
+%Similar to expert systems [MM says: ?]
+%Such models are especially useful for studying systems
+%that do not have analytic mathematical descriptions.  [MM took out to shorten this paragraph]
+%Agent-based models can facilitate interdisciplinary collaborations because the
+%underlying rules can be easily communicated.  
+%[SF: THINKS this next text doesn't make sense until after complex
+%systems seciton.]
+The exploratory models
+championed by Holland were idealized and not intended to provide detailed, domain-specific
 predictions.  Instead they were meant to explore possible general
 mechanisms of complex systems and thus provide insights that might
 lead to more specific, detailed models.  Such idealized models are
 akin to what Dennett has called ``intuition pumps''
 \cite{Dennett1984}.
 
+The emphasis on exploratory models to build intuitions was an
+important theme of Holland's work, and he often quoted Eddington's
+remark on the occasion of the first experimental test of Einstein's
+theory of relativity: ``The contemplation in natural science of a wider
+domain than the actual leads to a far better understanding of the
+actual'' \cite{Eddington1927}.
+
 It should be noted that Holland's view of modeling is by no means
-typical.  For example, in a textbook on computational modeling, the
-authors offer the following definition: “Modeling is the application
+typical.  For example, a textbook on computational modeling offers
+ the following definition: ``Modeling is the application
 of methods to analyze complex, real-world problems in order to make
-predictions about what might happen with various actions”
-\cite{Shiflet2014}.   This sort of perspective completely rules out the
+predictions about what might happen with various actions''
+\cite{Shiflet2014}.   This perspective rules out the
 kind of exploratory modeling that Holland was most interested in. 
 
-Some researchers dispute that models make any kind of scientific
-contribution: "Models are metaphors that explain the world we don't
-understand in terms of worlds we do.  They are merely analogies,
-provide partial insight, stand on someone else's feet.  Theories stand
-on their own feet, and rely on no analogies."  [Emanuel Derman, 2012].
-[STEPH, I COULD NOT FIND REFERENCE FOR THIS QUOTE OUTSIDE SFI VIDEO.]
+% Some researchers dispute that models make any kind of scientific
+% contribution: ``Models are metaphors that explain the world we don't
+% understand in terms of worlds we do.  They are merely analogies,
+% provide partial insight, stand on someone else's feet.  Theories stand
+% on their own feet, and rely on no analogies.''  [Emanuel Derman, 2012].
+% [MM SAYS:  I COULD NOT FIND REFERENCE FOR THIS QUOTE OUTSIDE SFI VIDEO.]
+% [MM SAYS:  Possibly delete this paragraph.]
 
-[NOW WE NEED A STRONG FINISHING SENTENCE TO RESCUE JHH STYLE
-  MODELING.]
+% [NOW WE NEED A STRONG FINISHING SENTENCE TO RESCUE JHH STYLE
+%   MODELING.]
 
-\section{Complexity}
+%\section{Common Properties of Complex Adaptive Systems}
 
-%\section{Complex Adaptive Systems}
+\section{Universal Properties of Complex Adaptive Systems}
 
 Holland was interested in a broad array of adaptive systems---immune
 systems, ecologies, financial markets, cities, and the brain---systems
-that are \emph{complex}.  In the 1980's, he teamed up with a small
+that are \emph{complex}.  In the early 1980s, he teamed up with a small
 group of scientists, primarily physicists with a sprinkling of
 economists and biologists, to discuss what properties this wide swath of systems
 have in common.  The discussions helped define the intellectual mission
 of the Santa Fe Institute (SFI), the first institution dedicated to
-developing a science of complexity.  [add in how many complexity
-  institutes there are worldwide and which others John played a hand
-  in.]  Holland brought to these discussions his lifelong study of
-adaptation and a reminder that true theories about complexity would
+developing a science of complexity, and the many others that followed.
+% [add in how many complexity
+%  institutes there are worldwide and which others John played a hand
+%  in. MM says: Do we really need that?]  
+Holland brought to these discussions his lifelong study of
+adaptation and a reminder that serious theories about complexity would
 need to look deeper than phenomenological descriptions but also
-account for the 'how' and 'why' of these systems.
+account for the `how' and `why' of these systems.
 %describing phenomena like chaos, power laws, and ONE MORE, and acoount for the  
 
 As the discussions matured, a consensus developed about the basic
-elements of complexity: (1) complex systems are composed of many
-components with nontrivial (nonlinear) interactions; (2) such systems
-are characterized by complex \emph{emergent} behavior, exhibiting
-higher-order patterns; (3) such systems operate at multiple (and often
+elements of complex systems, which are: (1) 
+%complex systems are 
+composed of many
+components with nonlinear interactions; (2) 
+%such systems
+%are 
+characterized by complex \emph{emergent} behavior, exhibiting
+higher-order patterns; (3) 
+%such systems 
+operating at multiple (and often
+% interacting? 
 nested) spatial and temporal scales, with some behavior being
 conserved across all scales and other behaviors changing at different
-scales, and (4) these systems exhibit continual adaptation, adjusting
-their behavioral rules through evolution and learning.  Although this
+scales, and (4) 
+%these systems exhibit 
+adaptive, with 
+behavioral rules continually adjusting through evolution and learning.  Although this
 is far from a formal definition of complex systems, most people
 working in the field today are interested in systems that have these
 properties.
 
-To illustrate his ideas about the ubuiquity of adaptation, Holland and
-co-workers developed two exploratory models, the SFI Artificial Stock
-Market and ECHO.  
+%To illustrate his ideas about the ubiquity of adaptation, Holland and
+%co-workers developed two exploratory models, the SFI Artificial Stock
+%Market and ECHO.  
 
 In the early 1990s, Holland teamed up with other Santa Fe Institute researchers,
 including several economists, to tackle the mismatch between predictions
-of the dominant theory in economics, the rational expectations
-hypothesis, and empirically observed stock market behaviors that
-deviated from the predicted equilibrium solutions.  In brief, most
+of rational expectations theory (the then dominant theory in economics) 
+and empirically observed stock market behaviors. 
+%that deviated from the predicted equilibrium solutions.  
+In brief, most
 economic theory of the day assumed that all participants in an economy
 or financial market are 100\% rational and act to maximize their
 individual gain.  In real life, however, actors in economies
-and markets are rarely rational, and financial markets often deviate
-from rationalilty, for example with speculative bubbles and crashes.
+and markets are rarely wholly rational, and financial markets often deviate
+from rationality, for example with speculative bubbles and crashes.
 
-The SFI Artificial Stock Market project \cite{Arthur1997,Palmer1994} explored a model in which rational
-traders are replaced by \emph{adaptive} traders---those who learn to
-forecast stock prices over time.  The model allowed testing for the
-possible emergence of different trading strategies, including
+The SFI Artificial Stock Market project \cite{Arthur1997,Palmer1994}
+developed an exploratory model in which rational
+traders were replaced by \emph{adaptive} traders---those who learn to
+forecast stock prices over time.  The model tested for the
+emergence of different trading strategies, including
 \emph{fundamental}, \emph{technical}, or \emph{uninformed}
 strategies. The simulated market with adaptive trading agents was run
 many times, and the dynamics of price and trading volumes were
@@ -594,33 +650,57 @@ collaborators found that the model's dynamics replicated several
 features of real-life markets.
 
 Although the SFI Stock Market model was highly simplified, it was very
-influential and led to many follow-on projects.  It was a clear
-demonstration of the essential role that adaptation plays in complex
-systems, and illustrated how Holland's theories of continual learning
+influential and led to many follow-on projects.  It 
+demonstrated clearly the essential role that adaptation plays in complex
+systems, and it illustrated how Holland's theories of continual learning
 in response to intermittent feedbacks from the environment could be
 integrated into domain-specific settings.
 
-ECHO \cite{Holland1999,Hraber1997} was an even more ambitious model
-that Holland and collaborators developed during the 1990s.  ECHO's
-scope included the evolution of interacting populations of individual
-agents, which through competition and learning discover symbiotic
-triads such as the famous ant-fly-caterpillar interaction, the Wiksell
-triangle of trading relationships in economics, and the immune
-system's learned ability to distinguish 'self' from 'other.'
-
-ECHO formalized Holland's theories about complex adaptive systems into
+ECHO \cite{Holland1999,Hraber1997} was an even more ambitious exploratory model
+<<<<<<< Updated upstream
+that Holland and collaborators developed next. 
+=======
+that Holland and collaborators developed during the 1990s. 
+>>>>>>> Stashed changes
+% ECHO's
+% scope included the evolution of interacting populations of individual
+% agents, which through competition and learning discover symbiotic
+% triads such as the famous ant-fly-caterpillar interaction, the Wiksell
+% triangle of trading relationships in economics, and the immune
+% system's learned ability to distinguish `self' from `other.'
+ECHO formalized Holland's idealization of complex adaptive systems into
 a runnable computational system where agents evolved external markers
-(called tags) and internal preferences and used them to form higher
-level aggregate structures (trading relationships, symbiotic groups,
-trophic cascades, interdependent organizations etc.).  ECHO agents
+(called tags) and internal preferences, and then used them to acquire
+resources, form higher
+level aggregate structures (such as trading relationships, symbiotic groups,
+trophic cascades, interdependent organizations, etc.).  ECHO agents
+<<<<<<< Updated upstream
+sometimes discovered mimicry and used it to deceive competitors.  
+In many runs,  
+the model developed increasingly complex structures and behaviors up
+to a point.  When these runs stabilized, the resulting population of agents
+% at least up to a point.   
+was found to reproduce several well-known patterns 
+observed in nature, most famously the rank-frequency distribution of
+species diversity known as the Preston curve in ecology.
+In layman's terms, ECHO evolved populations where 
+=======
 sometimes discovered mimicry to deceive competitors, and over time,
-the model developed increasingly complex structures and behaviors,
-often reproducing patterns observed in nature.  For example, ECHO
-evolved a diversity of agent types, whose rank-frequency distribution
-closely parallels the well-known Preston curve in ecology, a
-quantiative statement of the adage that 'most species are rare'. Many
-of the insights behind this project are described in his book, \emph{Hidden Order} \cite{Holland1995}
-The broad scope of this project was appealing to immunologists, economists, and evolutionary biologists alike.  
+the model developed increasingly complex structures and behaviors.
+% at least up to a point.  
+ECHO reproduced several well-known patterns 
+observed in nature.  For example, over time the population of ECHO
+evolved agents exhibited diversity of agent types, diversity with a 
+rank-frequency distribution that
+closely paralleled the well-known Preston curve in ecology.  In
+layman's terms, ECHO evolved populations where 
+>>>>>>> Stashed changes
+%quantitative statement of the adage that
+``most species are rare.''  
+The broad scope of the model, together with its ability to produce
+easily identifiable and well-known patterns from nature, was appealing to immunologists, economists, and evolutionary biologists alike.   Many
+of the insights behind this project are described in Holland's third book \emph{Hidden Order} \cite{Holland1995}. 
+
 
 % but it
 %was the economists who took it one step further in the SFI stock
@@ -641,40 +721,74 @@ Holland's later books, \emph{Emergence} \cite{Holland2000},
 \emph{Complexity: A Very Short Introduction} \cite{Holland2014} show how the
 theories of adaptation that Holland developed during the earlier part
 of his career fit into the larger landscape of complex systems
-research.  Holland's focus on how complex patterns emerge and change,
+research.  Holland's focus on understanding the mechanisms by which complex patterns emerge and change,
 rather than simply characterizing the patterns themselves (e.g.,
-describing chaotic attractors or power laws) reflected his
-deterimination to 'get to the heart' of complex adaptive systems.
+describing chaotic attractors or power laws), reflected his
+determination to get to the heart of complex adaptive systems.
 This determination represents the best of science.  Holland's
 willingness to tackle the hardest questions, develop his own
-formalisms, and use mathematics productively sets a high bar that we
-all should aspire to.
+formalisms, and use mathematics to provide insight sets a high bar 
+scientists in all disciplines.
+%to whch we
+%all should aspire.
 
+%\section{Relevance to Modern CS}
+%[MM says:  Do we need this section?  Or can we incorporate these points within the previous sections?]
 
-\section{Relevance to Modern CS}
-
-\begin{itemize}
-\item Evolutionary computation
-\item Q Learning
-\item Backprop
-\item    From Turing nomination: "Holland's machine learning system known as the
-   Learning Classifier System (LCS), developed in the early 1980s,
-   incorporated a reinforcement learning algorithm known as the bucket
-   brigade for non-Markovian environments, anticipating by nearly a
-   decade non-Markovian learning algorithms."
-\item Exploitation versus exploration -- relevance to reinforcement
-  learning, other parts of machine learning and optimization.
-\item Active learning.  (Two-armed bandit problem.) 
-\item On-line learning.  
-\end{itemize}
 
 \section{Conclusion}
 
-Introduced a few generations of students to computation in natural systems, an idea that today is better accepted.  His insights were deeper and more general than what often passes for work in biomimicry, e.g., for robots.
+John Holland was unusual in his ability to absorb the essence of other
+disciplines, articulate grand overarching
+principles, and them back them up with computational mechanisms and
+mathematics.  Unlike most researchers he moved seamlessly among these
+three modes of thinking, developing models that were years ahead of their time.  A
+close reading of his work reveals the antecedents of many ideas prevalent in
+machine learning today, e.g., reinforcement, learning in non-Markovian
+environments and active learning.   His seminal genetic algorithm
+spawned the field of evolutionary computation, and his insights
+and wisdom helped define what are now referred to as the
+\emph{sciences of complexity}.   
 
-The ideas have had huge impact and should still be a beacon for research in intelligent and complex systems
+Holland's many books and articles have influenced scientists around
+the work and across many disciplines.  Closer to home, he introduced
+several generations of students at the University of Michigan to
+computation in natural systems, an idea that even today remains
+somewhat controversial, despite successes in genetic algorithms for
+engineering design, biomimicry for robotics, abstractions of phermone
+trails in ant colonies for optimization methods, and the use of
+mechanisms from immunology to improve computer security.
 
-John's personality and humanity is inextricably tangled up with his intellectual contributions.
+Behind the ideas, of course, is the man himself.   Everyone who knew
+John personally will remember the gleam in his eye when he
+encountered a new idea; his willingness to talk to anyone, no matter
+how famous or how unfamous; and his incredible generosity and patience.
+%His insights aboutwere deeper and more general than what often passes for work in biomimicry, e.g., for robots.
+Holland's personality and humanity were somehow inextricably tangled
+up with his intellectual contributions.  Since his death, many of
+Holland's former students and colleagues have movingly described their
+desire to emulate his personal qualities as much as his scientific
+excellence.  John Holland's ideas, intellectual passion, and personal approach will serve as
+beacons for research in intelligent and complex systems for many
+years to come. 
+%the world of science is poorer without John
+%Holland on the scene.
+
+
+% \begin{itemize}
+% \item Evolutionary computation
+% \item Q Learning
+% \item Backprop
+% \item    From Turing nomination: "Holland's machine learning system known as the
+%    Learning Classifier System (LCS), developed in the early 1980s,
+%    incorporated a reinforcement learning algorithm known as the bucket
+%    brigade for non-Markovian environments, anticipating by nearly a
+%    decade non-Markovian learning algorithms."
+% \item Exploitation versus exploration -- relevance to reinforcement
+%   learning, other parts of machine learning and optimization.
+% \item Active learning.  (Two-armed bandit problem.) 
+% \item On-line learning.  
+% \end{itemize}
 
 \bibliographystyle{plain}
 
