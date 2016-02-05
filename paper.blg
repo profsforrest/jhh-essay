@@ -1,51 +1,48 @@
-This is BibTeX, Version 0.99d (TeX Live 2011)
+This is BibTeX, Version 0.99d (TeX Live 2014)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: paper.aux
 The style file: plain.bst
 Database file #1: paper.bib
-Warning--I didn't find a database entry for "Rochester1956"
-Warning--I didn't find a database entry for "Holland1962"
-Warning--I didn't find a database entry for "Holland1973"
 Warning--there's a number but no volume in Holland1977
-You've used 26 entries,
+You've used 29 entries,
             2118 wiz_defined-function locations,
-            671 strings with 7445 characters,
-and the built_in function-call counts, 6922 in all, are:
-= -- 663
-> -- 268
-< -- 2
-+ -- 109
-- -- 83
-* -- 418
-:= -- 1206
-add.period$ -- 79
-call.type$ -- 26
-change.case$ -- 103
+            682 strings with 7806 characters,
+and the built_in function-call counts, 7912 in all, are:
+= -- 763
+> -- 312
+< -- 1
++ -- 126
+- -- 97
+* -- 504
+:= -- 1373
+add.period$ -- 88
+call.type$ -- 29
+change.case$ -- 118
 chr.to.int$ -- 0
-cite$ -- 27
-duplicate$ -- 308
-empty$ -- 604
-format.name$ -- 83
-if$ -- 1434
+cite$ -- 30
+duplicate$ -- 341
+empty$ -- 682
+format.name$ -- 97
+if$ -- 1632
 int.to.chr$ -- 0
-int.to.str$ -- 26
-missing$ -- 38
-newline$ -- 133
-num.names$ -- 54
-pop$ -- 157
+int.to.str$ -- 29
+missing$ -- 41
+newline$ -- 148
+num.names$ -- 60
+pop$ -- 167
 preamble$ -- 1
-purify$ -- 93
+purify$ -- 105
 quote$ -- 0
-skip$ -- 178
+skip$ -- 198
 stack$ -- 0
-substring$ -- 337
-swap$ -- 36
-text.length$ -- 2
+substring$ -- 418
+swap$ -- 38
+text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 76
+type$ -- 88
 warning$ -- 1
-while$ -- 71
-width$ -- 28
-write$ -- 278
-(There were 4 warnings)
+while$ -- 83
+width$ -- 31
+write$ -- 310
+(There was 1 warning)
