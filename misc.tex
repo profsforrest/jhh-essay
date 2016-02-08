@@ -1,0 +1,80 @@
+%[MM SAYS:  IF WE WANT TO MAKE THIS SECTION SHORTER, WE COULD CUT EVERYTHING FROM HERE UP TO ``[UP TO HERE]'' (SEE BELOW)]
+
+Inspired by Bellman \cite{Bellman1961} and
+others, Holland explored the exploitation-versus-exploration tradeoff
+via an idealized ``two-armed bandit'' problem.  Given a slot machine
+with two arms, each of which has an unknown payoff probability, how
+should you allocate $N$ trials (pulls) between the arms so as to
+maximize your total payoff?  An example of an extreme \emph{exploitation} strategy would be to alternate between the arms until
+one of them gives a payoff, and then allocate all future trials to
+that arm alone.  Conversely, an example of an extreme \emph{exploration} strategy would be to randomly allocate the trials,
+irrespective of the payoff rates you obtain.  Obviously, each of these
+strategies is flawed.  What is an optimal strategy?
+In \cite{Holland1973,Holland1975} Holland derived
+an equation for such a strategy and argued that the optimal strategy
+allocated trials to the observed best arm at a slightly higher rate than
+exponential.  
+% SF used 'argue' because some claim that his derivation was wrong.
+He then extended this 
+% Let $A$ denote the arm currently
+%observed to have the higher payoff probability, and $B$ denote the
+%other arm.  Holland showed that the optimal strategy (the one that
+%yields maximal payoff, or minimal loss) is for the number of trials
+%allocated to $A$ to grow slightly faster than an exponential function
+%of the number of trials allocated to $B$.  Holland then showed that this
+result to the \emph{multi-armed bandit} case.
+
+Holland then made an analogy between multi-armed bandits and
+populations undergoing adaptation: building blocks in a population
+undergoing adaptation constitute the ``arms'' of a multi-armed bandit.
+Each building block can be said to have a probability of ``payoff''
+(i.e., contribution to a given individual's fitness).
+%Evaluating an individual in an environment is
+%like ``pulling the arms'' on a multi-armed bandit, where the ``arms''
+%correspond to each of the building blocks making up that individual.
+Thus, in the process of assigning a fitness to each individual in a
+population, adaptive evolution can be seen as implicitly sampling the
+many building blocks making up that collection of individuals.  The
+average fitness over many individuals containing a particular building
+block gives an estimate of that building block's payoff probability.
+
+% The question of how to balance exploitation and exploration---how to
+% optimally allocate trials to different arms based on their observed
+% payoff---now becomes the question of how to optimally sample in the
+% vast space of possible building blocks, based on their observed
+% average fitness.  Of course adaptive evolution deals in populations of
+% individuals, not building blocks.  There is no explicit mechanism for
+% keeping statistics on building blocks' ``observed average fitness''.
+% However, Holland's central idea here is that an approximation to
+% optimal building-block sampling does indeed occur, as an emergent
+% property of the population dynamics.
+
+%Holland argued that an approximation to
+%optimal building-block sampling actually occurs, as an emergent
+%property of the population dynamics defined by a
+% To show this mathematically, he defined an idealization of
+%adaptive evolution: an algorithm he called a \emph{reproductive
+% plan}.
+To show this mathematically, Holland defined an idealization of adaptive evolution: 
+a population-based stochastic process
+operating on bit strings, involving the ``genetic'' operators of
+ reproduction, fitness-based selection, crossover, mutation, and
+ inversion.  
+%Building blocks are formalized as \emph{
+%   schemata}---patterns of bits within a string. (Here are two examples
+% of schemas: ``all strings beginning with the bits 10'' or ``all
+% strings that start with the pattern 1*1'', where * can be replaced by
+% either 0 or 1).
+
+% Holland's most important result was the following: He proved
+% mathematically that his reproductive plan results---implicitly---in a
+% near-optimal allocation of trials to schemata, thus optimizing the
+
+% exploitation versus exploration balance.  Holland noted that the
+% explicit act of assigning fitnesses to the individuals in a population
+% was actually implicitly sampling a much larger collection of building
+% blocks.  Holland termed this \emph{implicit parallelism}; the
+% parallel leveraging of statistics from implicit sampling is a main
+% strength of his population-based approaches to search.
+
+[UP TO HERE]
